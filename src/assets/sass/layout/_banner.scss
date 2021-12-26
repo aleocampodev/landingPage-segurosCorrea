@@ -9,6 +9,21 @@
 #banner {
   @include padding(10em, 0, (0, 0, _size(wrapper-edges, large) * -0.5, 0));
 
+  background-color: _palette(bg2);
+
+  background-size: auto, cover;
+
+  background-position: center, center;
+
+  background-image: linear-gradient(
+      to top,
+      transparentize(_palette(bg2), 0.5),
+      transparentize(_palette(bg2), 0.5)
+    ),
+    url('../images/bg.jpg');
+
+  margin-bottom: (_size(wrapper-edges, large) * -1);
+
   .inner {
     margin: 0 auto;
     width: _size(inner);
@@ -68,12 +83,12 @@
   @include breakpoint('<=large') {
     @include padding(7em, 0, (0, 0, _size(wrapper-edges, large) * 0.5, 0));
 
-    background-color: _palette(bg);
+    background-color: _palette(bg2);
 
     background-image: linear-gradient(
         to top,
-        transparentize(_palette(bg), 0.2),
-        transparentize(_palette(bg), 0.2)
+        transparentize(_palette(bg2), 0.5),
+        transparentize(_palette(bg2), 0.5)
       ),
       url('../images/bg.jpg');
 

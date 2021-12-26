@@ -40,7 +40,7 @@ Edit `config.js` to put up your details
 
 ```javascript
 module.exports = {
-  siteTitle: 'Gatsby Starter solidstate', // <title>
+  siteTitle: 'Seguros Correa', // <title>
   ...
   heading: 'Anubhav',
   subHeading: 'Web Developer',
@@ -70,7 +70,7 @@ Additionally, it also has [path-prefix](https://www.gatsbyjs.org/docs/path-prefi
 - [gatsby-starter-resume](https://github.com/anubhavsrivastava/gatsby-starter-resume)
 - [gatsby-starter-spectral](https://github.com/anubhavsrivastava/gatsby-starter-spectral)
 - [gatsby-starter-newage](https://github.com/anubhavsrivastava/gatsby-starter-newage)
-- [gatsby-starter-stylish](https://github.com/anubhavsrivastava/gatsby-starter-stylish) 
+- [gatsby-starter-stylish](https://github.com/anubhavsrivastava/gatsby-starter-stylish)
 - [gatsby-starter-readonly](https://github.com/anubhavsrivastava/gatsby-starter-readonly)
 - [gatsby-starter-prologue](https://github.com/anubhavsrivastava/gatsby-starter-prologue)
 - [gatsby-starter-phantom](https://github.com/anubhavsrivastava/gatsby-starter-phantom)

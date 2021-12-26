@@ -59,12 +59,12 @@
     > header {
       @include padding(5em, 0, (4em, 0, _size(wrapper-edges, large) * 0.5, 0));
 
-      background-color: _palette(bg);
+      background-color: _palette(bg2);
 
       background-image: linear-gradient(
           to top,
-          transparentize(_palette(bg), 0.2),
-          transparentize(_palette(bg), 0.2)
+          transparentize(_palette(bg2), 0.5),
+          transparentize(_palette(bg2), 0.5)
         ),
         url('../images/bg.jpg');
 
@@ -83,6 +83,13 @@
         3em,
         (4em, 0, _size(wrapper-edges, medium) * 0.5, 0)
       );
+
+      background-image: linear-gradient(
+          to top,
+          transparentize(_palette(bg2), 0.5),
+          transparentize(_palette(bg2), 0.5)
+        ),
+        url('../images/bg.jpg');
 
       background-size: auto, cover;
 
@@ -120,10 +127,10 @@
 }
 
 .wrapper {
-  background-color: _palette(bg);
+  background-color: _palette(bg2);
   margin: _size(wrapper-edges, large) 0;
   position: relative;
-  @include wrapper-edges-color(_palette(bg));
+  @include wrapper-edges-color(_palette(bg2));
 
   &:before,
   &:after {
@@ -165,7 +172,7 @@
 
   @for $i from 2 through _misc(max-wrapper-styles) {
     $j: 3 * ($i - 1);
-    $color: desaturate(lighten(_palette(bg), $j), $j * 0.5);
+    $color: desaturate(lighten(_palette(bg2), $j), $j * 0.5);
 
     &.style#{$i} {
       background-color: $color;
