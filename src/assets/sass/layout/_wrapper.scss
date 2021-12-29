@@ -8,7 +8,7 @@
 
 /// Sets the colors of the wrapper's top/bottom edges.
 /// @param {string} $color Color.
-@mixin wrapper-edges-color($color: black) {
+@mixin wrapper-edges-color($color: white) {
   &:before,
   &:after {
     background-image: svg-url(
@@ -63,10 +63,10 @@
 
       background-image: linear-gradient(
           to top,
-          transparentize(_palette(bg2), 0.5),
-          transparentize(_palette(bg2), 0.5)
+          transparentize(_palette(bg2), 0.9),
+          transparentize(_palette(bg2), 0.9)
         ),
-        url('../images/bg.jpg');
+        url('../images/bg.jpeg');
 
       background-size: auto, cover;
 
@@ -86,10 +86,10 @@
 
       background-image: linear-gradient(
           to top,
-          transparentize(_palette(bg2), 0.5),
-          transparentize(_palette(bg2), 0.5)
+          transparentize(_palette(bg2), 0.9),
+          transparentize(_palette(bg2), 0.9)
         ),
-        url('../images/bg.jpg');
+        url('../images/bg.jpeg');
 
       background-size: auto, cover;
 
@@ -127,10 +127,11 @@
 }
 
 .wrapper {
-  background-color: _palette(bg2);
+  //tercer cuadro
+  background-color: _palette(fg);
   margin: _size(wrapper-edges, large) 0;
   position: relative;
-  @include wrapper-edges-color(_palette(bg2));
+  @include wrapper-edges-color(_palette(fg));
 
   &:before,
   &:after {
@@ -172,7 +173,7 @@
 
   @for $i from 2 through _misc(max-wrapper-styles) {
     $j: 3 * ($i - 1);
-    $color: desaturate(lighten(_palette(bg2), $j), $j * 0.5);
+    $color: desaturate(lighten(_palette(fg), $j), $j * 0.5);
 
     &.style#{$i} {
       background-color: $color;
@@ -181,8 +182,8 @@
   }
 
   &.spotlight {
-    @include wrapper-edges-color(_palette(accent));
-    background-color: _palette(accent);
+    @include wrapper-edges-color(_palette(fg));
+    background-color: _palette(fg);
 
     .inner {
       @include vendor('display', 'flex');
@@ -193,12 +194,14 @@
     .image {
       border-radius: 100%;
       margin: 0 _size(section-spacing, large) _size(element-margin) 0;
-      width: 22em;
+      width: 32em;
       overflow: hidden;
+      border: 3px solid _palette(bg-secondary);
       -ms-flex: 1;
 
       img {
         border-radius: 100%;
+        border: 3px solid _palette(bg-secondary);
         width: 100%;
       }
     }
@@ -206,6 +209,20 @@
     .content {
       width: 100%;
       -ms-flex: 2;
+    }
+
+    .content-opinion {
+      &::before {
+        content: '"';
+        color: _palette(bg-secondary);
+        font-size: 1.5em;
+      }
+
+      &::after {
+        content: '"';
+        color: _palette(bg-secondary);
+        font-size: 1.5em;
+      }
     }
 
     &:nth-child(2n - 1) {
@@ -221,7 +238,7 @@
 
     @for $i from 2 through _misc(max-wrapper-styles) {
       $j: 3 * ($i - 1);
-      $color: saturate(darken(_palette(accent), $j), $j * 0.5);
+      $color: saturate(darken(_palette(bg2), $j), $j * 0.5);
 
       &.style#{$i} {
         background-color: $color;

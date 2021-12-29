@@ -3,7 +3,7 @@ module.exports = {
   manifestName: 'Seguros Correa',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
-  manifestBackgroundColor: '#1976D2',
+  manifestBackgroundColor: '#192665',
   manifestThemeColor: '#689F38',
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/logoSC.jpeg',
@@ -20,9 +20,7 @@ module.exports = {
     {
       icon: 'fa-envelope-o',
       name: 'Email',
-      url: 'mailto:anubhav.srivastava00@gmail.com',
-    },
+      url: 'comercial@seguroscorrea.com.co',
+    }
   ],
-  phone: '000-00000',
-  address: '305 Del Sol, Sunnyvale, CA',
 };

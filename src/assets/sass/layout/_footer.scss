@@ -11,10 +11,10 @@
 
   background-image: linear-gradient(
       to top,
-      transparentize(_palette(bg2), 0.5),
-      transparentize(_palette(bg2), 0.5)
+      transparentize(_palette(bg2), 0.2),
+      transparentize(_palette(bg2), 0.2)
     ),
-    url('../images/bg.jpg');
+    url('../images/img7.jpeg');
 
   background-size: auto, cover;
 
@@ -79,10 +79,10 @@
 
     background-image: linear-gradient(
         to top,
-        transparentize(_palette(bg2), 0.5),
-        transparentize(_palette(bg2), 0.5)
+        transparentize(_palette(bg2), 0.2),
+        transparentize(_palette(bg2), 0.2)
       ),
-      url('../images/bg.jpg');
+      url('../images/img7.jpeg');
 
     background-size: auto, cover;
 

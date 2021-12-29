@@ -19,6 +19,13 @@ module.exports = {
         icon: config.manifestIcon, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landingPage`,
+        path: `${__dirname}/content/landingPage`,
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify-cms',

@@ -22,8 +22,8 @@ $size: (
     small: 1.75em,
   ),
   wrapper-edges: (
-    large: 6.5em,
-    medium: 4.75em,
+    large: 3.5em,
+    medium: 3.75em,
     small: 2.5em,
   ),
 );
@@ -54,9 +54,11 @@ $font: (
 // Palette.
 $palette: (
   bg: #2e3141,
-  bg2: #1976d2,
+  bg2: #192665,
+  bg-secondary: #689f38,
   fg: #ffffff,
   fg-bold: #ffffff,
+  fg-black: #000,
   fg-light: rgba(255, 255, 255, 0.35),
   border: rgba(255, 255, 255, 0.125),
   border-bg: rgba(255, 255, 255, 0.025),
