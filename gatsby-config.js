@@ -6,6 +6,24 @@ module.exports = {
     title: config.siteTitle,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landingPage`,
+        path: `${__dirname}/content/landingPage`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-remark`,
+    'gatsby-plugin-sass',
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -20,14 +38,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-purgecss`,
       options: {
-        name: `landingPage`,
-        path: `${__dirname}/content/landingPage`,
+        whitelist: [
+          'slick-slider',
+          'slick-initialized',
+          'slick-list',
+          'slick-track',
+          'slick-slide',
+          'slick-active',
+          'slick-current',
+          'slick-theme',
+        ],
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-netlify-cms',
   ],
 };

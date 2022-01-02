@@ -6,66 +6,155 @@
 
 /* Features */
 
-	.features {
-		@include vendor('display', 'flex');
-		@include vendor('flex-wrap', 'wrap');
-		margin: 0 0 _size(element-margin) 0;
+.features {
+  @include vendor('display', 'flex');
+  @include vendor('flex-wrap', 'wrap');
+  margin: 0 0 _size(element-margin) 0;
 
-		article {
-			@include padding(1.75em, 1.75em);
-			background-color: desaturate(lighten(_palette(bg), 3), 1.5);
-			border-radius: _size(border-radius);
-			margin: (_size(section-spacing, large) * 0.5) _size(section-spacing, large) (_size(section-spacing, large) * 0.5) 0;
-			width: calc(50% - #{_size(section-spacing, large) * 0.5});
+   .maincontainer {
+    width: 502px;
+    height: 499px;
+    margin: 10px;
+    float: left; /* stack each div horizontally */
+  }
 
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
+  img {
+    border-radius: 10px;
+  }
 
-			.image {
-				border-radius: _size(border-radius) _size(border-radius) 0 0;
-				display: block;
-				margin-bottom: 1.75em;
-				margin-left: -1.75em;
-				margin-top: -1.75em;
-				position: relative;
-				width: calc(100% + #{3.5em});
+  .back h2 {
+    position: absolute;
+  }
 
-				img {
-					border-radius: _size(border-radius) _size(border-radius) 0 0;
-					width: 100%;
-				}
-			}
-		}
+  .back p {
+    position: absolute;
+    top: 50px;
+    font-size: 15px;
+  }
 
-		@include breakpoint('<=medium') {
-			article {
-				margin: (_size(section-spacing, medium) * 0.5) _size(section-spacing, medium) (_size(section-spacing, medium) * 0.5) 0;
-				width: calc(50% - #{_size(section-spacing, medium) * 0.5});
-			}
-		}
+  .front h2 {
+    position: absolute;
+    padding: 10px;
+    top: 200px;
+    color: #000;
+  }
 
-		@include breakpoint('<=small') {
-			article {
-				@include padding(1.5em, 1.5em);
-				margin: (_size(section-spacing, small) * 0.5) _size(section-spacing, small) (_size(section-spacing, small) * 0.5) 0;
-				width: calc(50% - #{_size(section-spacing, small) * 0.5} - 1px);
+  /* style the maincontainer class with all child div's of class .front */
+  .maincontainer > .front {
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
 
-				.image {
-					margin-bottom: 1.5em;
-					margin-left: -1.5em;
-					margin-top: -1.5em;
-					width: calc(100% + #{3em});
-				}
-			}
-		}
+    width: 302px;
+    height: 290px;
 
-		@include breakpoint('<=xsmall') {
-			display: block;
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform 0.5s linear 0s;
+  }
 
-			article {
-				width: 100%;
-				margin: 0 0 _size(element-margin) 0 !important;
-			}
-		}
-	}
+  /* style the maincontainer class with all child div's of class .back */
+  .maincontainer > .back {
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: #262626;
+    color: #fff;
+    width: 302px;
+    height: 290px;
+    border-radius: 10px;
+    padding: 5px;
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform 0.5s linear 0s;
+  }
+
+  .maincontainer:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+  }
+
+  .maincontainer:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+  }
+
+  /*article {
+    @include padding(1.75em, 1.75em);
+    background-color: desaturate(lighten(_palette(bg2), 3), 1.5);
+    border-radius: _size(border-radius);
+    margin: (_size(section-spacing, large) * 0.5) _size(section-spacing, large)
+      (_size(section-spacing, large) * 0.5) 0;
+    width: calc(50% - #{_size(section-spacing, large) * 0.5});
+    cursor: pointer;
+    overflow: hidden;
+/
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    .image {
+      border-radius: _size(border-radius) _size(border-radius) 0 0;
+      display: block;
+      margin-bottom: 1.75em;
+      margin-left: -1.75em;
+      margin-top: -1.75em;
+      position: relative;
+      width: calc(100% + #{3.5em});
+
+      img {
+        border-radius: _size(border-radius) _size(border-radius) 0 0;
+        width: 100%;
+      }
+    }
+
+    .text-animation {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      height: 100%;
+
+      &:hover {
+        .hover {
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .hover {
+      position: absolute;
+      bottom: -50px;
+      background-color: cyan;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @include breakpoint('<=medium') {
+    article {
+      margin: (_size(section-spacing, medium) * 0.5)
+        _size(section-spacing, medium) (_size(section-spacing, medium) * 0.5) 0;
+      width: calc(50% - #{_size(section-spacing, medium) * 0.5});
+    }
+  }
+
+  @include breakpoint('<=small') {
+    article {
+      @include padding(1.5em, 1.5em);
+      margin: (_size(section-spacing, small) * 0.5)
+        _size(section-spacing, small) (_size(section-spacing, small) * 0.5) 0;
+      width: calc(50% - #{_size(section-spacing, small) * 0.5} - 1px);
+
+      .image {
+        margin-bottom: 1.5em;
+        margin-left: -1.5em;
+        margin-top: -1.5em;
+        width: calc(100% + #{3em});
+      }
+    }
+  }
+
+  @include breakpoint('<=xsmall') {
+    display: block;
+
+    article {
+      width: 100%;
+      margin: 0 0 _size(element-margin) 0 !important;
+    }
+  }*/
+}

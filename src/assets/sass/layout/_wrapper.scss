@@ -59,19 +59,6 @@
     > header {
       @include padding(5em, 0, (4em, 0, _size(wrapper-edges, large) * 0.5, 0));
 
-      background-color: _palette(bg2);
-
-      background-image: linear-gradient(
-          to top,
-          transparentize(_palette(bg2), 0.9),
-          transparentize(_palette(bg2), 0.9)
-        ),
-        url('../images/bg.jpeg');
-
-      background-size: auto, cover;
-
-      background-position: center, 0% 30%;
-
       margin-bottom: (_size(wrapper-edges, large) * -1);
     }
   }
@@ -83,17 +70,6 @@
         3em,
         (4em, 0, _size(wrapper-edges, medium) * 0.5, 0)
       );
-
-      background-image: linear-gradient(
-          to top,
-          transparentize(_palette(bg2), 0.9),
-          transparentize(_palette(bg2), 0.9)
-        ),
-        url('../images/bg.jpeg');
-
-      background-size: auto, cover;
-
-      background-position: center, 0% 0%;
 
       margin-bottom: (_size(wrapper-edges, medium) * -1);
 
@@ -304,7 +280,8 @@
       @include padding(2em, 2em);
     }
 
-    &.spotlight {
+    &.spotlight,
+    &.spotlight1 {
       .inner {
         @include vendor('align-items', 'flex-start');
       }

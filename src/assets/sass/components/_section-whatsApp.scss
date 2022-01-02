@@ -1,0 +1,13 @@
+.section-whatsApp {
+  position: fixed;
+  left: 94%;
+  bottom: 15%;
+  cursor: pointer;
+
+  & img {
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}
