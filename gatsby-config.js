@@ -20,11 +20,18 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-remark-frontmatter',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
