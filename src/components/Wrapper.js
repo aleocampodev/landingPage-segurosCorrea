@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Testimonials from './Testimonials';
 import Products from './Products';
 
-import img1 from '../assets/images/img1.jpeg';
 import img2 from '../assets/images/img2.jpeg';
 import img3 from '../assets/images/img3.jpeg';
 
@@ -14,25 +13,24 @@ const Wrapper = () => {
     <StaticQuery
       query={graphql`
         query WrapperQuery {
-          allMarkdownRemark {
-            nodes {
-              frontmatter {
-                title
-                date
-                description
-                image {
-                  id
-                }
-                alt
+          markdownRemark {
+            frontmatter {
+              title
+              date
+              description
+              image {
+                publicURL
+                base
               }
-              excerpt
-              html
+              alt
             }
+            excerpt
+            html
           }
         }
       `}
       render={data => {
-        const content = data.allMarkdownRemark.nodes;
+        const content = data.markdownRemark.html;
         console.log(data, 'bu');
 
         return (
@@ -41,20 +39,20 @@ const Wrapper = () => {
               <section id="one" className="wrapper spotlight style1">
                 <div className="inner">
                   <div className="image">
-                    <img src={img1} alt="" className="image" />
+                    <img
+                      src={data.markdownRemark.frontmatter.image.publicURL}
+                      alt={data.markdownRemark.frontmatter.alt}
+                      className="image"
+                    />
                   </div>
                   <div className="content">
                     <h2 className="major major-secondary">
-                      {data.allMarkdownRemark.nodes[1].frontmatter.title}
+                      {data.markdownRemark.frontmatter.title}
                     </h2>
-                    <p className="paragraph-secondary">
-                      {data.allMarkdownRemark.nodes[1].htmlii}
-                    </p>
-                    <p className="paragraph-secondary">
-                      Contactanos para brindarte el seguro más adecuado que
-                      complemente lo que tu necesitas tanto para ti, como para
-                      tus seres queridos.
-                    </p>
+                    <div
+                      className="paragraph-secondary"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    ></div>
                   </div>
                 </div>
               </section>

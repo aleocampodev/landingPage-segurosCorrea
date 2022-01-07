@@ -1,9 +1,26 @@
 import React from 'react';
 
 import Insurers from './Insurers';
-import { Link } from 'gatsby';
+import { graphql, Link,StaticQuery } from 'gatsby';
 
 const Products = () => {
+  <StaticQuery query={graphql`
+  {
+    products: allMarkdownRemark(filter: { frontmatter: { type: { eq: "products" } } }) {
+           edges {
+             node {
+               id
+             }
+           }
+         }
+   }
+  
+  
+  `}
+
+  
+  render={data=>{
+    let products= data.products
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner">
@@ -99,6 +116,8 @@ const Products = () => {
       <Insurers />
     </section>
   );
+  }}
+  />
 };
 
 export default Products;

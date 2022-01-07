@@ -1,12 +1,11 @@
 import React from 'react';
 
 import logoSc from '../assets/img/logoSC.jpeg';
-import backgroundPic from '../assets/images/bg.jpeg';
+
 import config from '../../config';
 import '../assets/sass/main.scss';
 
-const Banner = ({ data }) => {
-  console.log(data, 'hola');
+const Banner = ({ title, description, backgroundPic ,subTitle}) => {
   return (
     <section
       id="banner"
@@ -23,10 +22,10 @@ const Banner = ({ data }) => {
           <img src={logoSc} alt="logo seguros correa" className="icon" />
         </div>
         <div className="header-text">
-          <h2>{config.heading}</h2>
-          <p>Empresa de consultoría</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
-        <p>{config.subHeading}</p>
+        <p>{subTitle}</p>
       </div>
     </section>
   );
