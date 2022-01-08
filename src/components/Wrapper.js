@@ -5,32 +5,32 @@ import { StaticQuery, graphql } from 'gatsby';
 import Testimonials from './Testimonials';
 import Products from './Products';
 
-import img2 from '../assets/images/img2.jpeg';
-import img3 from '../assets/images/img3.jpeg';
-
 const Wrapper = () => {
   return (
     <StaticQuery
       query={graphql`
         query WrapperQuery {
-          markdownRemark {
-            frontmatter {
-              title
-              date
-              description
-              image {
-                publicURL
-                base
+          allMarkdownRemark {
+            nodes {
+              frontmatter {
+                title
+                date
+                description
+                image {
+                  publicURL
+                  base
+                }
+                alt
               }
-              alt
+              excerpt
+              html
             }
-            excerpt
-            html
           }
         }
       `}
       render={data => {
-        const content = data.markdownRemark.html;
+        const content = data.allMarkdownRemark.nodes[1].html;
+        const principles = data.allMarkdownRemark.nodes[2].html;
         console.log(data, 'bu');
 
         return (
@@ -40,14 +40,17 @@ const Wrapper = () => {
                 <div className="inner">
                   <div className="image">
                     <img
-                      src={data.markdownRemark.frontmatter.image.publicURL}
-                      alt={data.markdownRemark.frontmatter.alt}
+                      src={
+                        data.allMarkdownRemark.nodes[1].frontmatter.image
+                          .publicURL
+                      }
+                      alt={data.allMarkdownRemark.nodes[1].frontmatter.alt}
                       className="image"
                     />
                   </div>
                   <div className="content">
                     <h2 className="major major-secondary">
-                      {data.markdownRemark.frontmatter.title}
+                      {data.allMarkdownRemark.nodes[1].frontmatter.title}
                     </h2>
                     <div
                       className="paragraph-secondary"
@@ -60,22 +63,23 @@ const Wrapper = () => {
               <section id="two" className="wrapper alt spotlight style2">
                 <div className="inner">
                   <div className="image">
-                    <img src={img2} alt="" className="image" />
+                    <img
+                      src={
+                        data.allMarkdownRemark.nodes[2].frontmatter.image
+                          .publicURL
+                      }
+                      alt={data.allMarkdownRemark.nodes[2].frontmatter.alt}
+                      className="image"
+                    />
                   </div>
                   <div className="content">
-                    <h2 className="major major-secondary">Principios</h2>
-                    <ul>
-                      <li>
-                        Confidencialidad: Cada información que obtenemos es de
-                        orden privado.
-                      </li>
-                      <li>
-                        Transparencia: Somos transparentes y queremos brindarle
-                        el mas sincero servicio a nuestros clientes.
-                      </li>
-                      <li>Eficacia: </li>
-                      <li>Espiritu de servicio: </li>
-                    </ul>
+                    <h2 className="major major-secondary">
+                      {data.allMarkdownRemark.nodes[2].frontmatter.title}
+                    </h2>
+                    <div
+                      className="listGreen"
+                      dangerouslySetInnerHTML={{ __html: principles }}
+                    ></div>
                   </div>
                 </div>
               </section>
@@ -83,12 +87,18 @@ const Wrapper = () => {
               <section id="three" className="wrapper spotlight style3">
                 <div className="inner">
                   <div className="image">
-                    <img src={img3} alt="" className="image" />
+                    <img
+                      src={
+                        data.allMarkdownRemark.nodes[3].frontmatter.image
+                          .publicURL
+                      }
+                      alt={data.allMarkdownRemark.nodes[3].frontmatter.alt}
+                      className="image"
+                    />
                   </div>
                   <div className="content">
                     <h2 className="content-opinion">
-                      Busco la solución a la medida, que te ayudará a cuidar a
-                      los que más quieres.
+                      {data.allMarkdownRemark.nodes[3].frontmatter.title}
                     </h2>
                   </div>
                 </div>

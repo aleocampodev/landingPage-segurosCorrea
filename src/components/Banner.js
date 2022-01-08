@@ -2,7 +2,6 @@ import React from 'react';
 
 import logoSc from '../assets/img/logoSC.jpeg';
 
-import config from '../../config';
 import '../assets/sass/main.scss';
 
 const Banner = ({ title, description, backgroundPic ,subTitle}) => {

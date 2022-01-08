@@ -1,49 +1,34 @@
 import React from 'react';
 
+import saving from '../assets/images/saving.jpeg';
+import life from '../assets/images/life.jpeg';
+import education from '../assets/images/education.jpeg';
+import travelers from '../assets/images/travelers.jpeg';
+
 import Insurers from './Insurers';
-import { graphql, Link,StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 const Products = () => {
-  <StaticQuery query={graphql`
-  {
-    products: allMarkdownRemark(filter: { frontmatter: { type: { eq: "products" } } }) {
-           edges {
-             node {
-               id
-             }
-           }
-         }
-   }
-  
-  
-  `}
-
-  
-  render={data=>{
-    let products= data.products
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner">
-        <h2 className="major major-secondary">Productos</h2>
+        <h2 className="major major-secondary">Servicios</h2>
         <p className="paragraph-secondary">
-          Algunos de los productos que manejo.
+          Algunos de los servicios que manejo.
         </p>
         <section className="features">
           <div className="features-product">
             <div className="maincontainer">
               <div className="back">
-                <h2>Ahorro e inversion</h2>
+                <h2>Ahorro e inversión</h2>
                 <p>
-                  Introduction to Copywriting’ workshop focuses on the theory
-                  and processes of professional copywriting as applied to
-                  persuasion, reasoning, and rhetoric. This workshop is
-                  best-suited to learning how to write and think about
-                  consumer-driven functions.
+                  Ahorro con beneficio tributario, programa de inversión en
+                  dolares.(Ahorro planeación e inversión)
                 </p>
               </div>
               <div className="front">
                 <div className="image">
-                  <img src="https://i.postimg.cc/nhG8H3X6/copywriting.jpg" />
+                  <img src={saving} />
                   <h2>Ahorro e inversión</h2>
                 </div>
               </div>
@@ -52,16 +37,14 @@ const Products = () => {
               <div className="back">
                 <h2>Seguros de vida y generales</h2>
                 <p>
-                  Introduction to Content Marketing workshop focuses on building
-                  content frameworks that are designed for and directed at
-                  communication engagement. This interdisciplinary workshop is
-                  best-suited to learning visual and written communication
-                  strategies.
+                  Los seguros de vida se maneja de manera individual y colectivo
+                  Seguros generales incluyen responsabilidad civil, pólizas de
+                  cumplimiento y pólizas de todo riesgo, entre otras.
                 </p>
               </div>
               <div className="front">
                 <div className="image">
-                  <img src="https://i.postimg.cc/ydrv1ZXq/contentmarketing.jpg" />
+                  <img src={life} />
                   <h2>Seguros de vida y generales</h2>
                 </div>
               </div>
@@ -80,7 +63,7 @@ const Products = () => {
               </div>
               <div className="front">
                 <div className="image">
-                  <img src="https://i.postimg.cc/ZqbG0630/webwriting.jpg" />
+                  <img src={education} />
                   <h2>Seguros educativos</h2>
                 </div>
               </div>
@@ -98,7 +81,7 @@ const Products = () => {
               </div>
               <div className="front">
                 <div className="image">
-                  <img src="https://i.postimg.cc/ydrv1ZXq/contentmarketing.jpg" />
+                  <img src={travelers} />
                   <h2>Asistencia integral para viajeros</h2>
                 </div>
               </div>
@@ -116,8 +99,6 @@ const Products = () => {
       <Insurers />
     </section>
   );
-  }}
-  />
 };
 
 export default Products;

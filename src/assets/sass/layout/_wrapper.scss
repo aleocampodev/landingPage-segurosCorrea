@@ -221,6 +221,10 @@
         @include wrapper-edges-color($color);
       }
     }
+
+    .listGreen ul li::marker {
+      color: _palette(bg-secondary);
+    }
   }
 
   @include breakpoint('<=medium') {
