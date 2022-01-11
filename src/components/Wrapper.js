@@ -2,8 +2,8 @@ import React from 'react';
 
 import { StaticQuery, graphql } from 'gatsby';
 
-import Testimonials from './Testimonials';
-import Products from './Products';
+import Services from './Services';
+import Testimonials from '../components/Testimonials';
 
 const Wrapper = () => {
   return (
@@ -104,8 +104,7 @@ const Wrapper = () => {
                 </div>
               </section>
 
-              <Products />
-
+              <Services />
               <Testimonials />
             </section>
           </div>

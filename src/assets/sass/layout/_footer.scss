@@ -7,7 +7,7 @@
 /* Footer */
 
 #footer {
-  background-color: _palette(bg2);
+  /*background-color: _palette(bg2);
 
   background-image: linear-gradient(
       to top,
@@ -18,7 +18,7 @@
 
   background-size: auto, cover;
 
-  background-position: center, center;
+  background-position: center, center;*/
 
   margin-top: (_size(wrapper-edges, large) * -1);
   padding-top: _size(wrapper-edges, large);
@@ -75,7 +75,7 @@
   }
 
   @include breakpoint('<=large') {
-    background-color: _palette(bg2);
+   /*background-color: _palette(bg2);
 
     background-image: linear-gradient(
         to top,
@@ -86,7 +86,7 @@
 
     background-size: auto, cover;
 
-    background-position: center, center;
+    background-position: center, center;*/
 
     margin-top: (_size(wrapper-edges, large) * -1);
     padding-top: _size(wrapper-edges, large);

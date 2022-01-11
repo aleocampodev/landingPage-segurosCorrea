@@ -1,8 +1,18 @@
 import React from 'react';
 import config from '../../config';
+import background from '../assets/images/img7.jpeg';
 export default function Footer() {
   return (
-    <section id="footer">
+    <section
+      id="footer"
+      style={{
+        backgroundImage: `linear-gradient(90deg, rgba(25,38,101,0.9122023809523809) 0%, rgba(25,38,101,0.8449754901960784) 1%), url(${background})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundColor: `#192665`,
+      }}
+    >
       <div className="inner">
         <h2 className="major major-secondary">Contacto</h2>
         <p>Ponte en contacto con nosotros, y con gusto te guiaremos.</p>

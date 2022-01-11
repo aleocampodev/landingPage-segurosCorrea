@@ -2,6 +2,7 @@
 title: 'Asistencia integral para viajeros'
 date: '2022-01-07'
 image: './travelers.jpeg'
+alt: 'Asistencia integral para viajeros'
 ---
 
-Ahorro con beneficio tributario, programa de inversión en dolares. (Ahorro planeación e inversión)
+Introduction to Content Marketing workshop focuses on building content frameworks that are designed for and directed at communication engagement. This interdisciplinary workshop is best-suited to learning visual and written communication strategies.

@@ -1,44 +1,57 @@
 import React from 'react';
-
-import profile1 from '../assets/images/profile1.jpeg';
+import { useStaticQuery, graphql } from 'gatsby';
 import '../assets/sass/main.scss';
 
 const Testimonials = () => {
+  const data = useStaticQuery(graphql`
+    query TestimonialsQuery {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            title
+            date
+            description
+            image {
+              publicURL
+              base
+            }
+            alt
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  `);
+
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3">
       <div className="inner">
-        <h2 className="major major-secondary">Testimonios</h2>
+        <h2 className="major major-secondary">
+          {data.allMarkdownRemark.nodes[22].frontmatter.title}
+        </h2>
         <div className="testimonials">
-          <div className="card">
-            <div className="layer"></div>
-            <div className="content">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div className="image1">
-                <img src={profile1} />
-              </div>
-              <div className="details">
-                <h2>Someone Famous Website Designer</h2>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="layer"></div>
-            <div className="content">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div className="image1">
-                <img src={profile1} />
-              </div>
-              <div className="details">
-                <h2>Someone Famous Website Designer</h2>
-              </div>
-            </div>
-          </div>
+          {data.allMarkdownRemark.nodes
+            .filter((node, index) => index >= 27 && index <= 28)
+            .map((node, index) => {
+              return (
+                <div className="card" key={index}>
+                  <div className="layer"></div>
+                  <div className="content">
+                    <p>{node.frontmatter.description}</p>
+                    <div className="image1">
+                      <img
+                        src={node.frontmatter.image.publicURL}
+                        alt={node.frontmatter.alt}
+                      />
+                    </div>
+                    <div className="details">
+                      <h2>{node.frontmatter.title}</h2>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </section>

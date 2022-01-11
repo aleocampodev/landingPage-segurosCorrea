@@ -5,4 +5,4 @@ image: './education.jpeg'
 alt: 'Seguros educativos'
 ---
 
-Ahorro con beneficio tributario, programa de inversión en dolares. (Ahorro planeación e inversión).
+Introduction to Web-Writing workshop focuses on building creative and systemic digital content through online user experiences that benefit people and robots. This workshop is best-suited to creating content for digital platforms and devices — websites, mobile, game consoles, and virtual reality engines.

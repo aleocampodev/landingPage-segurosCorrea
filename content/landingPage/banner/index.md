@@ -6,5 +6,4 @@ image: './bg.jpeg'
 alt: 'Mostrando propuesta'
 ---
 
-
-"Buscando lo mejor para tu bienestar"
+" Buscando lo mejor para tu bienestar. "
