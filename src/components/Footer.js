@@ -1,12 +1,39 @@
 import React from 'react';
 import config from '../../config';
-import background from '../assets/images/img7.jpeg';
+import { useStaticQuery, graphql } from 'gatsby';
+
 export default function Footer() {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "footer" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date
+            description
+            image {
+              publicURL
+              base
+            }
+            alt
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  `);
+
+  const backgroundFooter =
+    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
+
   return (
     <section
       id="footer"
       style={{
-        backgroundImage: `linear-gradient(90deg, rgba(25,38,101,0.9122023809523809) 0%, rgba(25,38,101,0.8449754901960784) 1%), url(${background})`,
+        backgroundImage: `linear-gradient(90deg, rgba(25,38,101,0.9122023809523809) 0%, rgba(25,38,101,0.8449754901960784) 1%), url(${backgroundFooter})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
@@ -14,9 +41,16 @@ export default function Footer() {
       }}
     >
       <div className="inner">
-        <h2 className="major major-secondary">Contacto</h2>
-        <p>Ponte en contacto con nosotros, y con gusto te guiaremos.</p>
-        <form method="post" action="/#">
+        <h2 className="major major-secondary">
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
+        </h2>
+        <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
+        <form
+          method="post"
+          name="contact"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>
@@ -48,7 +82,7 @@ export default function Footer() {
           })}
         </ul>
         <ul className="copyright">
-          <li>Seguros Correa - Empresa de consultoría </li>
+          <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>

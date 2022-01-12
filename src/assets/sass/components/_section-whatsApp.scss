@@ -4,6 +4,10 @@
   bottom: 15%;
   cursor: pointer;
 
+  & a {
+    border-bottom: 0;
+  }
+
   & img {
     width: 75px;
     height: 75px;

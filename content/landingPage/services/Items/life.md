@@ -3,6 +3,7 @@ title: 'Seguros de vida y generales'
 date: '2022-01-07'
 image: './life.jpeg'
 alt: 'Seguros de vida y generales'
+contentId: 'services'
 ---
 
 Los seguros de vida se maneja de manera individual y colectivo.

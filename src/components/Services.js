@@ -5,8 +5,10 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 
 const Services = () => {
   const data = useStaticQuery(graphql`
-    query ServicesQuery {
-      allMarkdownRemark {
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "services" } } }
+      ) {
         nodes {
           frontmatter {
             title
@@ -32,12 +34,12 @@ const Services = () => {
           {data.allMarkdownRemark.nodes[4].frontmatter.title}
         </h2>
         <p className="paragraph-secondary">
-          Algunos de los servicios que manejo.
+        {data.allMarkdownRemark.nodes[4].frontmatter.description}
         </p>
         <section className="features">
           <div className="features-product">
             {data.allMarkdownRemark.nodes
-              .filter((node, index) => index >= 23 && index <= 26)
+              .filter((node, index) => index <= 3)
               .map((node, index) => {
                 const text = node.html;
                 return (

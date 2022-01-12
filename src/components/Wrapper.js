@@ -29,14 +29,38 @@ const Wrapper = () => {
         }
       `}
       render={data => {
-        const content = data.allMarkdownRemark.nodes[1].html;
-        const principles = data.allMarkdownRemark.nodes[2].html;
+        const content = data.allMarkdownRemark.nodes[0].html;
+        const principles = data.allMarkdownRemark.nodes[1].html;
         console.log(data, 'bu');
 
         return (
           <div>
             <section id="wrapper">
               <section id="one" className="wrapper spotlight style1">
+                <div className="inner">
+                  <div className="image">
+                    <img
+                      src={
+                        data.allMarkdownRemark.nodes[0].frontmatter.image
+                          .publicURL
+                      }
+                      alt={data.allMarkdownRemark.nodes[0].frontmatter.alt}
+                      className="image"
+                    />
+                  </div>
+                  <div className="content">
+                    <h2 className="major major-secondary">
+                      {data.allMarkdownRemark.nodes[0].frontmatter.title}
+                    </h2>
+                    <div
+                      className="paragraph-secondary"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    ></div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="two" className="wrapper alt spotlight style2">
                 <div className="inner">
                   <div className="image">
                     <img
@@ -53,30 +77,6 @@ const Wrapper = () => {
                       {data.allMarkdownRemark.nodes[1].frontmatter.title}
                     </h2>
                     <div
-                      className="paragraph-secondary"
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    ></div>
-                  </div>
-                </div>
-              </section>
-
-              <section id="two" className="wrapper alt spotlight style2">
-                <div className="inner">
-                  <div className="image">
-                    <img
-                      src={
-                        data.allMarkdownRemark.nodes[2].frontmatter.image
-                          .publicURL
-                      }
-                      alt={data.allMarkdownRemark.nodes[2].frontmatter.alt}
-                      className="image"
-                    />
-                  </div>
-                  <div className="content">
-                    <h2 className="major major-secondary">
-                      {data.allMarkdownRemark.nodes[2].frontmatter.title}
-                    </h2>
-                    <div
                       className="listGreen"
                       dangerouslySetInnerHTML={{ __html: principles }}
                     ></div>
@@ -89,16 +89,16 @@ const Wrapper = () => {
                   <div className="image">
                     <img
                       src={
-                        data.allMarkdownRemark.nodes[3].frontmatter.image
+                        data.allMarkdownRemark.nodes[2].frontmatter.image
                           .publicURL
                       }
-                      alt={data.allMarkdownRemark.nodes[3].frontmatter.alt}
+                      alt={data.allMarkdownRemark.nodes[2].frontmatter.alt}
                       className="image"
                     />
                   </div>
                   <div className="content">
                     <h2 className="content-opinion">
-                      {data.allMarkdownRemark.nodes[3].frontmatter.title}
+                      {data.allMarkdownRemark.nodes[2].frontmatter.title}
                     </h2>
                   </div>
                 </div>

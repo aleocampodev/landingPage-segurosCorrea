@@ -4,24 +4,26 @@ import '../assets/sass/main.scss';
 
 const Testimonials = () => {
   const data = useStaticQuery(graphql`
-    query TestimonialsQuery {
-      allMarkdownRemark {
-        nodes {
-          frontmatter {
-            title
-            date
-            description
-            image {
-              publicURL
-              base
-            }
-            alt
+  {
+    allMarkdownRemark(
+      filter: { frontmatter: { contentId: { eq: "testimonials" } } }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          date
+          description
+          image {
+            publicURL
+            base
           }
-          excerpt
-          html
+          alt
         }
+        excerpt
+        html
       }
     }
+  }
   `);
 
   return (
@@ -32,7 +34,7 @@ const Testimonials = () => {
         </h2>
         <div className="testimonials">
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index >= 27 && index <= 28)
+            .filter((node, index) => index >= 24 && index <= 25)
             .map((node, index) => {
               return (
                 <div className="card" key={index}>

@@ -9,16 +9,23 @@ import '../assets/sass/main.scss';
 
 const Insurers = () => {
   const data = useStaticQuery(graphql`
-    query InsurersQuery {
-      allMarkdownRemark {
+    {
+      allMarkdownRemark(
+        filter: {
+          frontmatter: {
+            contentId: { eq: "logoInsurers" }
+            image: { publicURL: {} }
+          }
+        }
+      ) {
         nodes {
           frontmatter {
             title
             date
             description
             image {
+              id
               publicURL
-              base
             }
             alt
           }
@@ -28,6 +35,7 @@ const Insurers = () => {
       }
     }
   `);
+  console.log(data, 'hola');
 
   const settings = {
     dots: true,
@@ -44,14 +52,14 @@ const Insurers = () => {
     <div className="inner">
       <div className="slider">
         <h2 className=" major-secondary">
-          {data.allMarkdownRemark.nodes[24].frontmatter.title}
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <p className="paragraph-secondary">
-          {data.allMarkdownRemark.nodes[24].frontmatter.description}
+          {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
         <Slider {...settings}>
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index >= 5 && index <= 19)
+            .filter((node, index) => index >= 1)
             .map((node, index) => {
               return (
                 <div className="logoInsurer" key={index}>

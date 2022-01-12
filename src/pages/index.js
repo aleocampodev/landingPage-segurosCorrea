@@ -9,11 +9,17 @@ import { graphql } from 'gatsby';
 import '../assets/sass/main.scss';
 
 const IndexPage = ({ data }) => {
-  console.log(data, 'hola');
   return (
     <div>
       <Layout>
-        <Banner title={data.allMarkdownRemark.nodes[0].frontmatter.title} description={data.allMarkdownRemark.nodes[0].frontmatter.description} backgroundPic={data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL}  subTitle={data.allMarkdownRemark.nodes[0].excerpt}/>
+        <Banner
+          title={data.allMarkdownRemark.nodes[0].frontmatter.title}
+          description={data.allMarkdownRemark.nodes[0].frontmatter.description}
+          backgroundPic={
+            data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL
+          }
+          subTitle={data.allMarkdownRemark.nodes[0].excerpt}
+        />
         <Wrapper />
       </Layout>
       <SectionWhatsApp />

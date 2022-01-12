@@ -1,3 +1,4 @@
+
 module.exports = {
   siteTitle: 'Seguros Correa', // <title>
   manifestName: 'Seguros Correa',
@@ -8,8 +9,6 @@ module.exports = {
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/logoSC.jpeg',
   pathPrefix: `/seguros-correa/`, // This path is subpath of your hosting https://domain/portfolio
-  heading: 'Seguros Correa',
-  subHeading: 'Buscando lo mejor , para tu bienestar ',
   // social
   socialLinks: [
     {
