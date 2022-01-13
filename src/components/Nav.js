@@ -5,7 +5,7 @@ export default function Nav({ onMenuToggle = () => {} }) {
   return (
     <nav id="menu">
       <div className="inner">
-        <h2>Menu</h2>
+        <h2>Menú</h2>
         <ul className="links">
           <li>
             <Link
@@ -14,28 +14,58 @@ export default function Nav({ onMenuToggle = () => {} }) {
               }}
               to="/"
             >
-              Home
+              Inicio
             </Link>
           </li>
           <li>
-            <Link
+            <a
+              href="#loquehago"
               onClick={e => {
                 onMenuToggle();
               }}
-              to="/Generic"
+            >
+              ¡Lo que hago!
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={e => {
+                onMenuToggle();
+              }}
+              href="#principios"
+            >
+              Principios
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={e => {
+                onMenuToggle();
+              }}
+              href="#servicios"
             >
               Servicios
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               onClick={e => {
                 onMenuToggle();
               }}
-              to="/Elements"
+              href="#testimonios"
             >
-              Elements
-            </Link>
+              Testimonios
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={e => {
+                onMenuToggle();
+              }}
+              href="#contacto"
+            >
+              Contacto
+            </a>
           </li>
         </ul>
         <a

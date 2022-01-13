@@ -29,17 +29,17 @@ const Services = () => {
   console.log(data, 'services');
   return (
     <section id="four" className="wrapper alt style1">
-      <div className="inner">
+      <div className="inner" id="servicios">
         <h2 className="major major-secondary">
-          {data.allMarkdownRemark.nodes[4].frontmatter.title}
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <p className="paragraph-secondary">
-        {data.allMarkdownRemark.nodes[4].frontmatter.description}
+          {data.allMarkdownRemark.nodes[0].frontmatter.description}
         </p>
         <section className="features">
           <div className="features-product">
             {data.allMarkdownRemark.nodes
-              .filter((node, index) => index <= 3)
+              .filter((node, index) => index >= 1)
               .map((node, index) => {
                 const text = node.html;
                 return (

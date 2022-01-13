@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Services from './Services';
 import Testimonials from '../components/Testimonials';
+import Principles from '../components/Principles';
 
 const Wrapper = () => {
   const data = useStaticQuery(graphql`
@@ -31,38 +32,15 @@ const Wrapper = () => {
   `);
 
   console.log(data, 'wrapper');
-  const content = data.allMarkdownRemark.nodes[2].html;
-  const principles = data.allMarkdownRemark.nodes[1].html;
+  const content = data.allMarkdownRemark.nodes[1].html;
+
   console.log(data, 'bu');
 
   return (
     <div>
       <section id="wrapper">
         <section id="one" className="wrapper spotlight style1">
-          <div className="inner">
-            <div className="image">
-              <img
-                src={
-                  data.allMarkdownRemark.nodes[2].frontmatter.image.publicURL
-                }
-                alt={data.allMarkdownRemark.nodes[2].frontmatter.alt}
-                className="image"
-              />
-            </div>
-            <div className="content">
-              <h2 className="major major-secondary">
-                {data.allMarkdownRemark.nodes[2].frontmatter.title}
-              </h2>
-              <div
-                className="paragraph-secondary"
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="two" className="wrapper alt spotlight style2">
-          <div className="inner">
+          <div className="inner" id="#loquehago">
             <div className="image">
               <img
                 src={
@@ -77,12 +55,13 @@ const Wrapper = () => {
                 {data.allMarkdownRemark.nodes[1].frontmatter.title}
               </h2>
               <div
-                className="listGreen"
-                dangerouslySetInnerHTML={{ __html: principles }}
+                className="paragraph-secondary"
+                dangerouslySetInnerHTML={{ __html: content }}
               ></div>
             </div>
           </div>
         </section>
+        <Principles />
 
         <section id="three" className="wrapper spotlight style3">
           <div className="inner">

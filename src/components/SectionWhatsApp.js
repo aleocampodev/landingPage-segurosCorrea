@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
-import whatsApp from '../assets/images/whatsapp.png';
+import whatsApp from '../assets/folderImages/images/whatsapp.png';
 import '../assets/sass/main.scss';
 
 const SectionWhatsApp = () => {
@@ -29,6 +29,7 @@ const SectionWhatsApp = () => {
       }
     }
   `);
+  console.log(data, 'hola');
   const number = data.allMarkdownRemark.nodes[0].frontmatter.title;
   const message = data.allMarkdownRemark.nodes[0].frontmatter.description;
 

@@ -36,7 +36,7 @@ const Insurers = () => {
       }
     }
   `);
-  console.log(data, 'hola');
+  console.log(data, 'holaI');
 
   const settings = {
     dots: true,

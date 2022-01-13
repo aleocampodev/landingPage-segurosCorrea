@@ -1,4 +1,3 @@
-
 module.exports = {
   siteTitle: 'Seguros Correa', // <title>
   manifestName: 'Seguros Correa',
@@ -7,7 +6,7 @@ module.exports = {
   manifestBackgroundColor: '#192665',
   manifestThemeColor: '#689F38',
   manifestDisplay: 'standalone',
-  manifestIcon: 'src/assets/img/logoSC.jpeg',
+  manifestIcon: 'src/assets/folderImages/img/logoSC.jpeg',
   pathPrefix: `/seguros-correa/`, // This path is subpath of your hosting https://domain/portfolio
   // social
   socialLinks: [
@@ -20,6 +19,6 @@ module.exports = {
       icon: 'fa-envelope-o',
       name: 'Email',
       url: 'comercial@seguroscorrea.com.co',
-    }
+    },
   ],
 };

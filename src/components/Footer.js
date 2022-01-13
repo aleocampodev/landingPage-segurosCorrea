@@ -41,7 +41,7 @@ export default function Footer() {
         backgroundColor: `#192665`,
       }}
     >
-      <div className="inner">
+      <div className="inner" id="contacto">
         <h2 className="major major-secondary">
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>

@@ -31,7 +31,7 @@ const Testimonials = () => {
 
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3">
-      <div className="inner">
+      <div className="inner" id="testimonios">
         <h2 className="major major-secondary">
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>

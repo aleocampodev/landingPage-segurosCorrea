@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/previsoraLogo.png'
+image: '../logos/previsoraLogo.jpeg'
 alt: 'Logo Previsora'
 contentId: 'logoInsurers'
 ---
