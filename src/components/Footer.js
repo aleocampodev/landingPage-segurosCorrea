@@ -11,6 +11,7 @@ export default function Footer() {
         nodes {
           frontmatter {
             title
+            subtitle
             date
             description
             image {

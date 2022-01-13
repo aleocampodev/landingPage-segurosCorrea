@@ -4,37 +4,40 @@ import '../assets/sass/main.scss';
 
 const Testimonials = () => {
   const data = useStaticQuery(graphql`
-  {
-    allMarkdownRemark(
-      filter: { frontmatter: { contentId: { eq: "testimonials" } } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          date
-          description
-          image {
-            publicURL
-            base
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "testimonials" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            subtitle
+            date
+            description
+            image {
+              publicURL
+              base
+            }
+            alt
           }
-          alt
+          excerpt
+          html
         }
-        excerpt
-        html
       }
     }
-  }
   `);
+
+  console.log(data, 'estimonials');
 
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3">
       <div className="inner">
         <h2 className="major major-secondary">
-          {data.allMarkdownRemark.nodes[22].frontmatter.title}
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <div className="testimonials">
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index >= 24 && index <= 25)
+            .filter((node, index) => index >= 1)
             .map((node, index) => {
               return (
                 <div className="card" key={index}>

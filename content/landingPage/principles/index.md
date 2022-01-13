@@ -1,8 +1,9 @@
 ---
 title: 'Principios'
 date: ' 2022-01-03'
-image: './img2.jpeg'
+image: './img2.webp'
 alt: 'Brindando un buen servicio'
+contentId: 'wrapper'
 ---
 
 - Confidencialidad: Cada información que se es de orden privado.

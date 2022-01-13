@@ -7,11 +7,14 @@ import '../assets/sass/main.scss';
 
 const SectionWhatsApp = () => {
   const data = useStaticQuery(graphql`
-    query SectionWhatsAppQuery {
-      allMarkdownRemark {
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "sectionWhatsApp" } } }
+      ) {
         nodes {
           frontmatter {
             title
+            subtitle
             date
             description
             image {
@@ -26,8 +29,8 @@ const SectionWhatsApp = () => {
       }
     }
   `);
-  const number = data.allMarkdownRemark.nodes[30].frontmatter.title;
-  const message = data.allMarkdownRemark.nodes[30].frontmatter.description;
+  const number = data.allMarkdownRemark.nodes[0].frontmatter.title;
+  const message = data.allMarkdownRemark.nodes[0].frontmatter.description;
 
   return (
     <div className="section-whatsApp">

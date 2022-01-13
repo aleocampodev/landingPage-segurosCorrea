@@ -1,81 +1,134 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import pic4 from '../assets/images/pic04.jpg';
-import pic5 from '../assets/images/pic05.jpg';
+
+import pic1 from '../assets/images/services/saving1.jpeg';
+import pic2 from '../assets/images/services/autoInsurer.jpeg';
+import pic3 from '../assets/images/services/lifeInsurer.jpeg';
+import pic4 from '../assets/images/services/pymes.jpeg';
+import pic5 from '../assets/images/services/educationInsurer.jpeg';
+import pic6 from '../assets/images/services/policehealth.jpeg';
+import pic7 from '../assets/images/services/policycumpli.jpeg';
+import pic8 from '../assets/images/services/civil.jpeg';
+import pic9 from '../assets/images/services/traveler.jpeg';
+
+import '../assets/sass/main.scss';
+import Insurers from '../components/Insurers';
 
 const IndexPage = () => (
   <Layout fullMenu>
     <section id="wrapper">
       <header>
         <div className="inner">
-          <h2>Generic</h2>
-          <p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+          <h2 className="major-secondary">Servicios</h2>
+          <p className="paragraph-secondary">
+            Todo tipo de seguros que se ajustan a ti
+          </p>
         </div>
       </header>
 
       <div className="wrapper">
         <div className="inner">
-          <h3 className="major">Lorem ipsum dolor</h3>
-          <p>
-            Morbi mattis mi consectetur tortor elementum, varius pellentesque
-            velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac
-            scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis
-            lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo.
-            Maecenas sagittis felis ac sagittis semper. Curabitur purus leo
-            donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada
-            fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo.
-            Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci
-            fringilla tincidunt. Aliquam eleifend ligula non velit accumsan
-            cursus. Etiam ut gravida sapien.
-          </p>
-
-          <p>
-            Vestibulum ultrices risus velit, sit amet blandit massa auctor sit
-            amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis
-            id vel diam. Praesent sit amet posuere risus, eu faucibus lectus.
-            Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam.
-            Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id
-            quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor
-            consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec
-            felis elementum varius.
-          </p>
-
-          <h3 className="major">Vitae phasellus</h3>
-          <p>
-            Cras mattis ante fermentum, malesuada neque vitae, eleifend erat.
-            Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis
-            egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus
-            in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.
-          </p>
-
           <section className="features">
             <article>
-              <a href="/#" className="image">
-                <img src={pic4} alt="" />
-              </a>
-              <h3 className="major">Sed feugiat lorem</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                nulla dignissim dapibus ultrices.
+              <div className="image">
+                <img src={pic1} alt="" />
+              </div>
+              <h3 className="major major-secondary">
+                Programa de ahorro con beneficio tributario
+              </h3>
+              <p className="paragraph-secondary">
+                Cras mattis ante fermentum, malesuada neque vitae, eleifend
+                erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget
+                mattis egestas, purus ipsum consequat orci, sit amet lobortis
+                lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat
+                auctor laoreet.
               </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
             </article>
             <article>
-              <a href="/#" className="image">
-                <img src={pic5} alt="" />
-              </a>
-              <h3 className="major">Nisl placerat</h3>
-              <p>
+              <div className="image">
+                <img src={pic2} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Seguro de auto</h3>
+              <p className="paragraph-secondary">
                 Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
                 nulla dignissim dapibus ultrices.
               </p>
-              <a href="/#" className="special">
-                Learn more
-              </a>
             </article>
+            <article>
+              <div className="image">
+                <img src={pic3} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Seguro de vida</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic4} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Seguro para pymes</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic5} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Seguro educativo</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic6} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Poliza de salud</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic7} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Poliza de cumplimiento</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic8} alt="" />
+              </div>
+              <h3 className="major major-secondary"> Responsabilidad civil</h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <article>
+              <div className="image">
+                <img src={pic9} alt="" />
+              </div>
+              <h3 className="major major-secondary">
+                {' '}
+                Asistencia integral al viajero
+              </h3>
+              <p className="paragraph-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
+                nulla dignissim dapibus ultrices.
+              </p>
+            </article>
+            <Insurers />
           </section>
         </div>
       </div>

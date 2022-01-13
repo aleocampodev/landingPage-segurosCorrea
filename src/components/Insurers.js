@@ -22,6 +22,7 @@ const Insurers = () => {
           frontmatter {
             title
             date
+            subtitle
             description
             image {
               id
