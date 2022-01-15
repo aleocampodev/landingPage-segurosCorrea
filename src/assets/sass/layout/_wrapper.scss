@@ -228,7 +228,7 @@
   }
 
   @include breakpoint('<=medium') {
-    margin: _size(wrapper-edges, medium) 0;
+    margin: _size(wrapper-edges, large) 0;
 
     &:before,
     &:after {
@@ -292,12 +292,15 @@
 
       .image {
         width: 19em;
-        margin: 0 _size(section-spacing, small) _size(element-margin) 0;
+        & img {
+          margin-top: 55px;
+        }
       }
 
       &:nth-child(2n - 1) {
-        .image {
+        .image2 {
           margin: 0 0 _size(element-margin) _size(section-spacing, small);
+          margin-top: 25px;
         }
       }
     }
@@ -320,6 +323,18 @@
   @include breakpoint('<=xxsmall') {
     .inner {
       @include padding(2em, 1.5em);
+    }
+  }
+}
+
+#loquehago {
+  padding-bottom: 35px;
+
+  @include breakpoint('<=small') {
+    & .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

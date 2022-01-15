@@ -7,18 +7,6 @@
 /* Footer */
 
 #footer {
-  /*background-color: _palette(bg2);
-
-  background-image: linear-gradient(
-      to top,
-      transparentize(_palette(bg2), 0.2),
-      transparentize(_palette(bg2), 0.2)
-    ),
-    url('../images/img7.jpeg');
-
-  background-size: auto, cover;
-
-  background-position: center, center;*/
 
   margin-top: (_size(wrapper-edges, large) * -1);
   padding-top: _size(wrapper-edges, large);
@@ -45,11 +33,14 @@
     }
 
     .copyright {
-      border-top: solid 2px _palette(border);
+      border-top: solid 2px _palette(bg-secondary);
       list-style: none;
       margin: (_size(element-margin) * 2) 0 _size(element-margin) 0;
       padding: _size(element-margin) 0 0 0;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       li {
         border-left: solid 2px _palette(border);
@@ -75,7 +66,7 @@
   }
 
   @include breakpoint('<=large') {
-   /*background-color: _palette(bg2);
+    /*background-color: _palette(bg2);
 
     background-image: linear-gradient(
         to top,

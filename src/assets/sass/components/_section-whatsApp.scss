@@ -14,4 +14,19 @@
     background-color: white;
     border-radius: 50%;
   }
+
+  @include breakpoint('<=large') {
+    left: 92%;
+  }
+
+  @include breakpoint('<=medium') {
+    left: 90%;
+  }
+
+  @include breakpoint('<=small') {
+    left: 88%;
+  }
+
+  @include breakpoint('<=xsmall') {
+  }
 }

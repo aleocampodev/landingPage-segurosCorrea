@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import '../assets/sass/main.scss';
+import Layout from '../components/Layout';
 import Insurers from '../components/Insurers';
 import MainServices from '../components/MainServices';
 

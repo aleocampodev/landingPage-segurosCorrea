@@ -47,7 +47,7 @@ const Wrapper = () => {
                   data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL
                 }
                 alt={data.allMarkdownRemark.nodes[1].frontmatter.alt}
-                className="image"
+                className="image2"
               />
             </div>
             <div className="content">
@@ -71,7 +71,7 @@ const Wrapper = () => {
                   data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL
                 }
                 alt={data.allMarkdownRemark.nodes[0].frontmatter.alt}
-                className="image"
+                className="image2"
               />
             </div>
             <div className="content">

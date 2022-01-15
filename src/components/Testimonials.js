@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import '../assets/sass/main.scss';
 
+
 const Testimonials = () => {
   const data = useStaticQuery(graphql`
     {
@@ -30,9 +31,9 @@ const Testimonials = () => {
   console.log(data, 'estimonials');
 
   return (
-    <section id="three" className="wrapper spotlight spotlight1 style3">
-      <div className="inner" id="testimonios">
-        <h2 className="major major-secondary">
+    <section id="three" className="wrapper spotlight spotlight1 style3 ">
+      <div className="inner testimonialsCard" id="testimonios">
+        <h2 className="major major-secondary testimonialsTitle">
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <div className="testimonials">
