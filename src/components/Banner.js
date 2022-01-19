@@ -1,11 +1,38 @@
 import React from 'react';
 
-import logoSc from '../assets/img/logoSC.jpeg';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import config from '../../config';
 import '../assets/sass/main.scss';
 
-const Banner = ({ title, description, backgroundPic ,subTitle}) => {
+const Banner = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "banner" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date
+            subtitle
+            description
+            image {
+              publicURL
+              base
+            }
+            alt
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  `);
+  console.log(data, 'banner');
+  const backgroundPic =
+    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
+  const logoSc = data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
+
   return (
     <section
       id="banner"
@@ -17,15 +44,25 @@ const Banner = ({ title, description, backgroundPic ,subTitle}) => {
         backgroundColor: `#192665`,
       }}
     >
-      <div className="inner">
+      <div
+        className="inner"
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+      >
         <div className="logo">
-          <img src={logoSc} alt="logo seguros correa" className="icon" />
+          <img
+            src={logoSc}
+            alt={data.allMarkdownRemark.nodes[1].frontmatter.image.alt}
+            className="icon"
+          />
         </div>
         <div className="header-text">
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <h2>{data.allMarkdownRemark.nodes[0].frontmatter.title}</h2>
+          <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
         </div>
-        <p>{subTitle}</p>
+        <p>{data.allMarkdownRemark.nodes[0].frontmatter.subtitle}</p>
       </div>
     </section>
   );

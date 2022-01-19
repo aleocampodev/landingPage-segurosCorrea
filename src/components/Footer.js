@@ -1,12 +1,75 @@
 import React from 'react';
 import config from '../../config';
+import { useStaticQuery, graphql } from 'gatsby';
+
 export default function Footer() {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "footer" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            subtitle
+            date
+            description
+            image {
+              publicURL
+              base
+            }
+            alt
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  `);
+
+  console.log(data, 'footer');
+  const backgroundFooter =
+    data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
+
   return (
-    <section id="footer">
-      <div className="inner">
-        <h2 className="major major-secondary">Contacto</h2>
-        <p>Ponte en contacto con nosotros, y con gusto te guiaremos.</p>
-        <form method="post" action="/#">
+    <section
+      id="footer"
+      style={{
+        backgroundImage: `linear-gradient(90deg, rgba(25,38,101,0.9122023809523809) 0%, rgba(25,38,101,0.8449754901960784) 1%), url(${backgroundFooter})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundColor: `#192665`,
+      }}
+    >
+      <div className="inner" id="contacto">
+        <h2
+          className="major major-secondary"
+          data-sal="slide-left"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          {data.allMarkdownRemark.nodes[1].frontmatter.title}
+        </h2>
+        <p
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          {data.allMarkdownRemark.nodes[0].frontmatter.description}
+        </p>
+        <form
+          method="post"
+          name="contact"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>
@@ -21,13 +84,25 @@ export default function Footer() {
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
           </div>
-          <ul className="actions">
+          <ul
+            className="actions"
+            data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <li>
               <input type="submit" value="Enviar" />
             </li>
           </ul>
         </form>
-        <ul className="contact">
+        <ul
+          className="contact"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           {config.socialLinks.map(social => {
             const { icon, url } = social;
             return (
@@ -37,8 +112,14 @@ export default function Footer() {
             );
           })}
         </ul>
-        <ul className="copyright">
-          <li>Seguros Correa - Empresa de consultoría </li>
+        <ul
+          className="copyright"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>

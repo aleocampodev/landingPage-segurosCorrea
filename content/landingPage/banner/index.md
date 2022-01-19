@@ -2,9 +2,8 @@
 title: 'Seguros Correa'
 date: '2021-12-22'
 description: 'Empresa de consultoría'
-image: './bg.jpeg'
+subtitle: 'Buscando lo mejor para tu bienestar.'
+image: './bg.webp'
 alt: 'Mostrando propuesta'
+contentId: 'banner'
 ---
-
-
-"Buscando lo mejor para tu bienestar"

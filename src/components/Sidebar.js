@@ -5,12 +5,31 @@ export default function SideBar({ fullMenu }) {
   const [headerOpen, toggleHeader] = useState(false);
   return (
     <>
-      <header id="header" className={`${fullMenu ? '' : 'alt'}`}>
-        <h1>
-          <Link to="/">Seguros Correa</Link>
-        </h1>
+      <header
+        id="header"
+        className={`${fullMenu ? '' : 'alt'}`}
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+      >
+        <div
+          data-sal="slide-right"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          <h1>
+            <Link to="/">Seguros Correa</Link>
+          </h1>
+        </div>
 
-        <nav>
+        <nav
+          data-sal="flip-left"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           <a
             href="#menu"
             onClick={e => {

@@ -1,107 +1,107 @@
 import React from 'react';
 
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Testimonials from './Testimonials';
-import Products from './Products';
-
-import img2 from '../assets/images/img2.jpeg';
-import img3 from '../assets/images/img3.jpeg';
+import Services from './Services';
+import Testimonials from '../components/Testimonials';
+import Principles from '../components/Principles';
 
 const Wrapper = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query WrapperQuery {
-          markdownRemark {
-            frontmatter {
-              title
-              date
-              description
-              image {
-                publicURL
-                base
-              }
-              alt
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "wrapper" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            subtitle
+            date
+            description
+            image {
+              publicURL
+              base
             }
-            excerpt
-            html
+            alt
           }
+          excerpt
+          html
         }
-      `}
-      render={data => {
-        const content = data.markdownRemark.html;
-        console.log(data, 'bu');
+      }
+    }
+  `);
 
-        return (
-          <div>
-            <section id="wrapper">
-              <section id="one" className="wrapper spotlight style1">
-                <div className="inner">
-                  <div className="image">
-                    <img
-                      src={data.markdownRemark.frontmatter.image.publicURL}
-                      alt={data.markdownRemark.frontmatter.alt}
-                      className="image"
-                    />
-                  </div>
-                  <div className="content">
-                    <h2 className="major major-secondary">
-                      {data.markdownRemark.frontmatter.title}
-                    </h2>
-                    <div
-                      className="paragraph-secondary"
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    ></div>
-                  </div>
-                </div>
-              </section>
+  console.log(data, 'wrapper');
+  const content = data.allMarkdownRemark.nodes[1].html;
 
-              <section id="two" className="wrapper alt spotlight style2">
-                <div className="inner">
-                  <div className="image">
-                    <img src={img2} alt="" className="image" />
-                  </div>
-                  <div className="content">
-                    <h2 className="major major-secondary">Principios</h2>
-                    <ul>
-                      <li>
-                        Confidencialidad: Cada información que obtenemos es de
-                        orden privado.
-                      </li>
-                      <li>
-                        Transparencia: Somos transparentes y queremos brindarle
-                        el mas sincero servicio a nuestros clientes.
-                      </li>
-                      <li>Eficacia: </li>
-                      <li>Espiritu de servicio: </li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
+  console.log(data, 'bu');
 
-              <section id="three" className="wrapper spotlight style3">
-                <div className="inner">
-                  <div className="image">
-                    <img src={img3} alt="" className="image" />
-                  </div>
-                  <div className="content">
-                    <h2 className="content-opinion">
-                      Busco la solución a la medida, que te ayudará a cuidar a
-                      los que más quieres.
-                    </h2>
-                  </div>
-                </div>
-              </section>
-
-              <Products />
-
-              <Testimonials />
-            </section>
+  return (
+    <div>
+      <section id="wrapper">
+        <section id="one" className="wrapper spotlight style1">
+          <div className="inner" id="#loquehago">
+            <div className="image">
+              <img
+                src={
+                  data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL
+                }
+                alt={data.allMarkdownRemark.nodes[1].frontmatter.alt}
+                className="image2"
+              />
+            </div>
+            <div className="content">
+              <h2
+                className="major major-secondary aboutTitle"
+                data-sal="slide-right"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              >
+                {data.allMarkdownRemark.nodes[1].frontmatter.title}
+              </h2>
+              <div
+                className="paragraph-secondary "
+                dangerouslySetInnerHTML={{ __html: content }}
+                data-sal="slide-up"
+                data-sal-duration="1000"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+              ></div>
+            </div>
           </div>
-        );
-      }}
-    />
+        </section>
+        <Principles />
+
+        <section id="three" className="wrapper spotlight style3">
+          <div className="inner">
+            <div className="image">
+              <img
+                src={
+                  data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL
+                }
+                alt={data.allMarkdownRemark.nodes[0].frontmatter.alt}
+                className="image2"
+              />
+            </div>
+            <div className="content">
+              <h2
+                className="content-opinion"
+                data-sal="slide-up"
+                data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
+                data-sal-delay="300" // adds delay to the animation (from 5 to 1000 ms)
+                data-sal-easing="ease"
+              >
+                {data.allMarkdownRemark.nodes[0].frontmatter.title}
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <Services />
+        <Testimonials />
+      </section>
+    </div>
   );
 };
 

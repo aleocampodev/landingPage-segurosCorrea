@@ -30,7 +30,7 @@
     @include padding(
       7.5em,
       0,
-      (3.5em, 0, _size(wrapper-edges, large) * -0.5, 0)
+      (1em, 0, _size(wrapper-edges, medium) * -0.5, 0)
     );
 
     .inner {
@@ -51,8 +51,11 @@
       font-weight: _font(weight-heading);
       letter-spacing: _font(kern-heading);
       line-height: 2;
-      text-transform: uppercase;
     }
+  }
+
+  header.paddingHeader {
+    padding-bottom: 0;
   }
 
   @include breakpoint('<=large') {
@@ -84,7 +87,7 @@
       @include padding(
         3.75em,
         2em,
-        (2.75em, 0, _size(wrapper-edges, small) * 0.5, 0)
+        (2em, 0, _size(wrapper-edges, small) * 0.5, 0)
       );
 
       background-size: auto, 125%;
@@ -105,7 +108,7 @@
 .wrapper {
   //tercer cuadro
   background-color: _palette(fg);
-  margin: _size(wrapper-edges, large) 0;
+  margin: 1em 0;
   position: relative;
   @include wrapper-edges-color(_palette(fg));
 
@@ -207,7 +210,8 @@
         text-align: right;
       }
 
-      .image {
+      .image,
+      .image2 {
         margin: 0 0 _size(element-margin) _size(section-spacing, large);
       }
     }
@@ -221,10 +225,14 @@
         @include wrapper-edges-color($color);
       }
     }
+
+    .listGreen ul li::marker {
+      color: _palette(bg-secondary);
+    }
   }
 
   @include breakpoint('<=medium') {
-    margin: _size(wrapper-edges, medium) 0;
+    margin: _size(wrapper-edges, large) 0;
 
     &:before,
     &:after {
@@ -260,7 +268,7 @@
   }
 
   @include breakpoint('<=small') {
-    margin: _size(wrapper-edges, small) 0;
+    margin: 1.5em 0;
 
     &:before,
     &:after {
@@ -288,14 +296,21 @@
 
       .image {
         width: 19em;
-        margin: 0 _size(section-spacing, small) _size(element-margin) 0;
+
+        & img {
+          margin-top: 55px;
+        }
       }
 
       &:nth-child(2n - 1) {
-        .image {
+        .image2 {
           margin: 0 0 _size(element-margin) _size(section-spacing, small);
+          margin-top: 25px;
         }
       }
+    }
+    .aboutTitle {
+      text-align: left;
     }
   }
 
@@ -309,6 +324,15 @@
         margin: 0 0 (_size(element-margin) * 0.5) 0 !important;
         max-width: 85%;
         width: 12em;
+        position: relative;
+        top: 50%;
+        right: 30%;
+      }
+    }
+    #image {
+      left: 15%;
+      & img {
+        right: 0;
       }
     }
   }
@@ -316,6 +340,18 @@
   @include breakpoint('<=xxsmall') {
     .inner {
       @include padding(2em, 1.5em);
+    }
+  }
+}
+
+#loquehago {
+  padding-bottom: 35px;
+
+  @include breakpoint('<=small') {
+    & .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

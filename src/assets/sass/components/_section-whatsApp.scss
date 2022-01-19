@@ -4,10 +4,36 @@
   bottom: 15%;
   cursor: pointer;
 
+  & a {
+    border-bottom: 0;
+  }
+
   & img {
     width: 75px;
     height: 75px;
     background-color: white;
     border-radius: 50%;
+  }
+
+  @include breakpoint('<=large') {
+    left: 92%;
+  }
+
+  @include breakpoint('<=medium') {
+    left: 90%;
+  }
+
+  @include breakpoint('<=small') {
+    left: 85%;
+    top: 85%;
+  }
+
+  @include breakpoint('<=xsmall') {
+    left: 83%;
+    top: 76%;
+  }
+
+  @include breakpoint('<=xsmall') {
+    left: 79%;
   }
 }

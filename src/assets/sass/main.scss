@@ -26,16 +26,16 @@
       1280px,
     ),
     medium: (
-      737px,
+      795px,
       980px,
     ),
     small: (
-      481px,
-      736px,
+      582px,
+      796px,
     ),
     xsmall: (
       361px,
-      480px,
+      583px,
     ),
     xxsmall: (
       null,
@@ -70,9 +70,9 @@
 @import 'components/testimonials';
 @import 'components/section-whatsApp';
 @import 'components/insurers';
+@import 'components/_generic';
 
 // Layout.
-
 @import 'layout/header';
 @import 'layout/banner';
 @import 'layout/wrapper';

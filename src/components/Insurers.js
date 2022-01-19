@@ -1,27 +1,39 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import skandia from '../assets/images/logos/logo skandia.png';
-import allianz from '../assets/images/logos/allianzLogo.png';
-import axa from '../assets/images/logos/Axa-logo.jpeg';
-import bbva from '../assets/images/logos/bbvaLogo.jpeg';
-import colpatria from '../assets/images/logos/colpatriaLogo.png';
-import global from '../assets/images/logos/globalLogo.jpeg';
-import liberty from '../assets/images/logos/libertysegurosLogo.png';
-import sbs from '../assets/images/logos/sbslogo.png';
-import segurosBolivar from '../assets/images/logos/segurosbolivar.jpeg';
-import segurosDelEstado from '../assets/images/logos/segurosdelestadologo.gif';
-import mapfre from '../assets/images/logos/mapfreLogo.jpeg';
-import assistCard from '../assets/images/logos/assistCardLogo.png';
-import previsora from '../assets/images/logos/previsoraLogo.png';
-import sura from '../assets/images/logos/sura.png';
-import segurosMundial from '../assets/images/logos/segurosmundialLogo.jpeg';
 
 import '../assets/sass/main.scss';
+import HeadInsurers from './HeadInsurers';
 
 const Insurers = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { contentId: { eq: "logoInsurers" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date
+            subtitle
+            description
+            image {
+              id
+              publicURL
+            }
+            alt
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  `);
+  console.log(data, 'holaI');
+
   const settings = {
     dots: true,
     infinite: true,
@@ -31,59 +43,61 @@ const Insurers = () => {
     speed: 3000,
     autoplaySpeed: 4000,
     cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
     <div className="inner">
       <div className="slider">
-        <h2 className=" major-secondary">Aseguradoras</h2>
-        <Slider {...settings}>
-          <div className="logoInsurer">
-            <img className="logoImage" src={skandia} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={allianz} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={axa} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={bbva} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={colpatria} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={global} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={liberty} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={sbs} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={segurosBolivar} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={segurosDelEstado} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={assistCard} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={previsora} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={mapfre} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={sura} alt="" />
-          </div>
-          <div className="logoInsurer">
-            <img className="logoImage" src={segurosMundial} alt="" />
-          </div>
-        </Slider>
+        <HeadInsurers />
+        <div
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          <Slider {...settings}>
+            {data.allMarkdownRemark.nodes
+              .filter((node, index) => index >= 1)
+              .map((node, index) => {
+                return (
+                  <div className="logoInsurer" key={index}>
+                    <img
+                      className="logoImage"
+                      src={node.frontmatter.image.publicURL}
+                      alt={node.frontmatter.alt}
+                    />
+                  </div>
+                );
+              })}
+          </Slider>
+        </div>
       </div>
     </div>
   );
