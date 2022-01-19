@@ -4,6 +4,10 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
+    description: 'Empresa de consultoría',
+    keywords:
+      "seguros, seguros de carro, seguros de automovil, seguro educativo, ahorro, inversión, responsabilidad civil, sura, seguros bolivar'",
+    image: '/src/assets/folderImages/img/logoSC.jpeg',
   },
   plugins: [
     {

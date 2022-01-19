@@ -40,10 +40,6 @@ const Principles = () => {
             src={data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL}
             alt={data.allMarkdownRemark.nodes[0].frontmatter.alt}
             className="image"
-            data-sal="slide-up"
-            data-sal-duration="2000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
           />
         </div>
         <div className="content">

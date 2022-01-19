@@ -27,8 +27,9 @@ export default function Footer() {
     }
   `);
 
+  console.log(data, 'footer');
   const backgroundFooter =
-    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
+    data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
 
   return (
     <section
@@ -49,7 +50,7 @@ export default function Footer() {
           data-sal-delay="300"
           data-sal-easing="ease"
         >
-          {data.allMarkdownRemark.nodes[0].frontmatter.title}
+          {data.allMarkdownRemark.nodes[1].frontmatter.title}
         </h2>
         <p
           data-sal="slide-up"
@@ -83,13 +84,14 @@ export default function Footer() {
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
           </div>
-          <ul className="actions"  data-sal="slide-right"
-              data-sal-duration="1000"
-              data-sal-delay="300"
-              data-sal-easing="ease">
-            <li
-             
-            >
+          <ul
+            className="actions"
+            data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
+            <li>
               <input type="submit" value="Enviar" />
             </li>
           </ul>
@@ -117,7 +119,7 @@ export default function Footer() {
           data-sal-delay="300"
           data-sal-easing="ease"
         >
-          <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
+          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>
