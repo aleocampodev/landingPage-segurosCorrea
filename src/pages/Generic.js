@@ -35,7 +35,7 @@ const IndexPage = () => {
   return (
     <Layout fullMenu>
       <section id="wrapper">
-        <header>
+        <header className="paddingHeader">
           <MainServices />
         </header>
 

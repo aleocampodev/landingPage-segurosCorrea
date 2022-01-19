@@ -1,13 +1,27 @@
 .slider {
   height: 225px;
-}
 
-.logoInsurer {
-  width: 95px;
-  height: 105px;
-  object-position: center center;
-}
-.logoImage {
-  width: 60%;
-  height: 100%;
+  .logoInsurer {
+    width: 95px;
+    height: 105px;
+    object-position: center center;
+  }
+  .logoImage {
+    width: 60%;
+    height: 100%;
+  }
+
+  @include breakpoint('<=small') {
+    margin: 49px;
+  }
+
+  @include breakpoint('<=xsmall') {
+    .logoImage {
+      width: 100%;
+    }
+
+    .slick-dots {
+      bottom: -55px;
+    }
+  }
 }

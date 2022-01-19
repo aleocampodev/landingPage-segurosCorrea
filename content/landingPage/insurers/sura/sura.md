@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/axa-logo.jpeg'
-alt: 'Logo Axa'
+image: './sura.jpeg'
+alt: 'Logo Sura'
 contentId: 'logoInsurers'
 ---

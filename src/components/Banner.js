@@ -44,7 +44,13 @@ const Banner = () => {
         backgroundColor: `#192665`,
       }}
     >
-      <div className="inner">
+      <div
+        className="inner"
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+      >
         <div className="logo">
           <img
             src={logoSc}

@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/globalLogo.jpeg'
-alt: 'Logo Global'
+image: './colpatriaLogo.png'
+alt: 'Logo Colpatria'
 contentId: 'logoInsurers'
 ---

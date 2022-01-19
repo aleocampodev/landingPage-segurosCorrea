@@ -2,6 +2,7 @@ import React from 'react';
 
 import Insurers from './Insurers';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import HeadServices from './HeadServices';
 
 const Services = () => {
   const data = useStaticQuery(graphql`
@@ -30,16 +31,17 @@ const Services = () => {
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">
-        <h2 className="major major-secondary">
-          {data.allMarkdownRemark.nodes[0].frontmatter.title}
-        </h2>
-        <p className="paragraph-secondary">
-          {data.allMarkdownRemark.nodes[0].frontmatter.description}
-        </p>
+        <HeadServices />
         <section className="features">
-          <div className="features-product">
+          <div
+            className="features-product"
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             {data.allMarkdownRemark.nodes
-              .filter((node, index) => index >= 1)
+              .filter((node, index) => index <= 3)
               .map((node, index) => {
                 const text = node.html;
                 return (
@@ -63,7 +65,12 @@ const Services = () => {
           </div>
         </section>
         <ul className="actions">
-          <li>
+          <li
+            data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
             <Link to="/Generic" className="button">
               Ver más
             </Link>

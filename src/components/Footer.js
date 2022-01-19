@@ -42,15 +42,32 @@ export default function Footer() {
       }}
     >
       <div className="inner" id="contacto">
-        <h2 className="major major-secondary">
+        <h2
+          className="major major-secondary"
+          data-sal="slide-left"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
-        <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
+        <p
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
+          {data.allMarkdownRemark.nodes[0].frontmatter.description}
+        </p>
         <form
           method="post"
           name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
         >
           <div className="fields">
             <div className="field">
@@ -66,13 +83,24 @@ export default function Footer() {
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
           </div>
-          <ul className="actions">
-            <li>
+          <ul className="actions"  data-sal="slide-right"
+              data-sal-duration="1000"
+              data-sal-delay="300"
+              data-sal-easing="ease">
+            <li
+             
+            >
               <input type="submit" value="Enviar" />
             </li>
           </ul>
         </form>
-        <ul className="contact">
+        <ul
+          className="contact"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           {config.socialLinks.map(social => {
             const { icon, url } = social;
             return (
@@ -82,7 +110,13 @@ export default function Footer() {
             );
           })}
         </ul>
-        <ul className="copyright">
+        <ul
+          className="copyright"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+        >
           <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>

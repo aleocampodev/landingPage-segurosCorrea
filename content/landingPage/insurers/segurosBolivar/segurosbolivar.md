@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/segurosbolivar.jpeg'
+image: './segurosbolivar.jpeg'
 alt: 'Logo Seguros Bolivar'
 contentId: 'logoInsurers'
 ---

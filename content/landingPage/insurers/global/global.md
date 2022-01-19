@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/sbsLogo.png'
-alt: 'Logo SBS'
+image: './globalLogo.jpeg'
+alt: 'Logo Global'
 contentId: 'logoInsurers'
 ---

@@ -5,6 +5,7 @@ import SectionWhatsApp from '../components/SectionWhatsApp';
 import Banner from '../components/Banner';
 import Wrapper from '../components/Wrapper';
 
+
 import '../assets/sass/main.scss';
 
 const IndexPage = () => {

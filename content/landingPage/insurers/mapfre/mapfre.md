@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/mapfreLogo.jpeg'
+image: './mapfreLogo.jpeg'
 alt: 'Logo Mapfre'
 contentId: 'logoInsurers'
 ---

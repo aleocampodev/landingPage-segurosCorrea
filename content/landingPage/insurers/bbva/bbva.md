@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/sura.png'
-alt: 'Logo Sura'
+image: './bbvaLogo.jpeg'
+alt: 'Logo BBVA'
 contentId: 'logoInsurers'
 ---

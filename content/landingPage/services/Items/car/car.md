@@ -1,8 +1,8 @@
 ---
-title: 'Seguros de vida y generales'
+title: 'Seguro de auto'
 date: '2022-01-07'
-image: './life.jpeg'
-alt: 'Seguros de vida y generales'
+image: './carInsurer.jpeg'
+alt: 'Seguro de auto'
 contentId: 'services'
 ---
 

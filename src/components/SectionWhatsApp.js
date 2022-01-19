@@ -34,7 +34,13 @@ const SectionWhatsApp = () => {
   const message = data.allMarkdownRemark.nodes[0].frontmatter.description;
 
   return (
-    <div className="section-whatsApp">
+    <div
+      className="section-whatsApp"
+      data-sal="flip-left"
+      data-sal-duration="1000"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+    >
       <a
         href={`https://wa.me/${number}?text=${message}`}
         target="_blank"

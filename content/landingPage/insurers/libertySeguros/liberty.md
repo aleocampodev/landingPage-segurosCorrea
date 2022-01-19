@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/libertysegurosLogo.png'
+image: './libertysegurosLogo.png'
 alt: 'Logo Liberty Seguros'
 contentId: 'logoInsurers'
 ---

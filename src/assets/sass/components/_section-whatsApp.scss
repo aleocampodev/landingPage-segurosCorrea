@@ -24,9 +24,16 @@
   }
 
   @include breakpoint('<=small') {
-    left: 88%;
+    left: 85%;
+    top: 85%;
   }
 
   @include breakpoint('<=xsmall') {
+    left: 83%;
+    top: 76%;
+  }
+
+  @include breakpoint('<=xsmall') {
+    left: 79%;
   }
 }

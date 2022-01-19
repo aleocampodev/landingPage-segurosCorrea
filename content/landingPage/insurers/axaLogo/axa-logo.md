@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: '../logos/bbvaLogo.jpeg'
-alt: 'Logo BBVA'
+image: './axa-logo.jpeg'
+alt: 'Logo Axa'
 contentId: 'logoInsurers'
 ---

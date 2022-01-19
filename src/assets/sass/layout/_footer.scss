@@ -7,7 +7,6 @@
 /* Footer */
 
 #footer {
-
   margin-top: (_size(wrapper-edges, large) * -1);
   padding-top: _size(wrapper-edges, large);
 
@@ -131,12 +130,17 @@
         li {
           border-left: 0;
           display: block;
-          margin: 1em 0 0 0;
           padding-left: 0;
 
           &:first-child {
             margin-top: 0;
           }
+        }
+      }
+
+      .contact {
+        li {
+          font-size: 14px;
         }
       }
     }
@@ -145,6 +149,12 @@
   @include breakpoint('<=xxsmall') {
     .inner {
       @include padding(2em, 1.5em);
+
+      & .content {
+        li {
+          font-size: 14px;
+        }
+      }
     }
   }
 }
