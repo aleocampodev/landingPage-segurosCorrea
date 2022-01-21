@@ -76,12 +76,7 @@ const Insurers = () => {
     <div className="inner">
       <div className="slider">
         <HeadInsurers />
-        <div
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
+        <div>
           <Slider {...settings}>
             {data.allMarkdownRemark.nodes
               .filter((node, index) => index >= 1)

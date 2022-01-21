@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
-
+import AOS from 'aos';
 import Services from './Services';
 import Testimonials from '../components/Testimonials';
 import Principles from '../components/Principles';
@@ -36,6 +36,10 @@ const Wrapper = () => {
 
   console.log(data, 'bu');
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
       <section id="wrapper">
@@ -50,23 +54,13 @@ const Wrapper = () => {
                 className="image2"
               />
             </div>
-            <div className="content">
-              <h2
-                className="major major-secondary aboutTitle"
-                data-sal="slide-right"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-              >
+            <div className="content" data-aos="fade-left">
+              <h2 className="major major-secondary aboutTitle">
                 {data.allMarkdownRemark.nodes[1].frontmatter.title}
               </h2>
               <div
                 className="paragraph-secondary "
                 dangerouslySetInnerHTML={{ __html: content }}
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-delay="300"
-                data-sal-easing="ease"
               ></div>
             </div>
           </div>
@@ -87,10 +81,11 @@ const Wrapper = () => {
             <div className="content">
               <h2
                 className="content-opinion"
-                data-sal="slide-up"
-                data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
-                data-sal-delay="300" // adds delay to the animation (from 5 to 1000 ms)
-                data-sal-easing="ease"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
               >
                 {data.allMarkdownRemark.nodes[0].frontmatter.title}
               </h2>

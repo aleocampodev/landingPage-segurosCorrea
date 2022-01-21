@@ -32,16 +32,17 @@ const Services = () => {
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">
         <HeadServices />
-        <section className="features">
-          <div
-            className="features-product"
-            data-sal="slide-up"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-          >
+        <section
+          className="features"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
+          <div className="features-product">
             {data.allMarkdownRemark.nodes
-              .filter((node, index) => index <= 3)
+              .sort((a, b) => a.identifier - b.identifier)
               .map((node, index) => {
                 const text = node.html;
                 return (
@@ -65,12 +66,7 @@ const Services = () => {
           </div>
         </section>
         <ul className="actions">
-          <li
-            data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-          >
+          <li>
             <Link to="/Generic" className="button">
               Ver más
             </Link>

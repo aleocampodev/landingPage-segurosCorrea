@@ -29,7 +29,7 @@ export default function Footer() {
 
   console.log(data, 'footer');
   const backgroundFooter =
-    data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
+    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
 
   return (
     <section
@@ -43,32 +43,20 @@ export default function Footer() {
       }}
     >
       <div className="inner" id="contacto">
-        <h2
-          className="major major-secondary"
-          data-sal="slide-left"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
-          {data.allMarkdownRemark.nodes[1].frontmatter.title}
+        <h2 className="major major-secondary">
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
-        <p
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
-          {data.allMarkdownRemark.nodes[0].frontmatter.description}
-        </p>
+        <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
         <form
           method="post"
           name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
         >
           <div className="fields">
             <div className="field">
@@ -84,25 +72,13 @@ export default function Footer() {
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
           </div>
-          <ul
-            className="actions"
-            data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-          >
+          <ul className="actions">
             <li>
               <input type="submit" value="Enviar" />
             </li>
           </ul>
         </form>
-        <ul
-          className="contact"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
+        <ul className="contact">
           {config.socialLinks.map(social => {
             const { icon, url } = social;
             return (
@@ -112,14 +88,8 @@ export default function Footer() {
             );
           })}
         </ul>
-        <ul
-          className="copyright"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
-          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
+        <ul className="copyright">
+          <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>
