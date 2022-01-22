@@ -95,7 +95,6 @@
   .maincontainer:hover > .back {
     transform: perspective(600px) rotateY(0deg);
   }
-
   @include breakpoint('<=medium') {
     .features-product {
       height: 1235px;
