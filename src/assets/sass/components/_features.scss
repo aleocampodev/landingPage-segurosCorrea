@@ -96,45 +96,6 @@
     transform: perspective(600px) rotateY(0deg);
   }
 
-  /*
-   
-
-    
-
-
-  @include breakpoint('<=medium') {
-    article {
-      margin: (_size(section-spacing, medium) * 0.5)
-        _size(section-spacing, medium) (_size(section-spacing, medium) * 0.5) 0;
-      width: calc(50% - #{_size(section-spacing, medium) * 0.5});
-    }
-  }
-
-  @include breakpoint('<=small') {
-    article {
-      @include padding(1.5em, 1.5em);
-      margin: (_size(section-spacing, small) * 0.5)
-        _size(section-spacing, small) (_size(section-spacing, small) * 0.5) 0;
-      width: calc(50% - #{_size(section-spacing, small) * 0.5} - 1px);
-
-      .image {
-        margin-bottom: 1.5em;
-        margin-left: -1.5em;
-        margin-top: -1.5em;
-        width: calc(100% + #{3em});
-      }
-    }
-  }
-
-  @include breakpoint('<=xsmall') {
-    display: block;
-
-    article {
-      width: 100%;
-      margin: 0 0 _size(element-margin) 0 !important;
-    }
-  }*/
-
   @include breakpoint('<=medium') {
     .features-product {
       height: 1235px;
