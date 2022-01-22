@@ -134,6 +134,19 @@
       margin: 0 0 _size(element-margin) 0 !important;
     }
   }*/
+
+  @include breakpoint('<=medium') {
+    .features-product {
+      height: 1235px;
+    }
+
+    .maincontainer {
+      flex: 1 50%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
   @include breakpoint('<=small') {
     .features-product {
       height: 1235px;

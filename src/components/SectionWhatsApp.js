@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
+import { gsap } from 'gsap';
+import AOS from 'aos';
 
 import whatsApp from '../assets/folderImages/images/whatsapp.png';
 import '../assets/sass/main.scss';
@@ -29,18 +31,17 @@ const SectionWhatsApp = () => {
       }
     }
   `);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   console.log(data, 'hola');
+
   const number = data.allMarkdownRemark.nodes[0].frontmatter.title;
   const message = data.allMarkdownRemark.nodes[0].frontmatter.description;
 
   return (
-    <div
-      className="section-whatsApp"
-      data-sal="flip-left"
-      data-sal-duration="1000"
-      data-sal-delay="300"
-      data-sal-easing="ease"
-    >
+    <div className="section-whatsApp ">
       <a
         href={`https://wa.me/${number}?text=${message}`}
         target="_blank"

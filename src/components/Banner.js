@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
+import AOS from 'aos';
 
 import '../assets/sass/main.scss';
 
@@ -29,6 +30,11 @@ const Banner = () => {
     }
   `);
   console.log(data, 'banner');
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const backgroundPic =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
   const logoSc = data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
@@ -44,13 +50,7 @@ const Banner = () => {
         backgroundColor: `#192665`,
       }}
     >
-      <div
-        className="inner"
-        data-sal="slide-up"
-        data-sal-duration="1000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-      >
+      <div className="inner headerText">
         <div className="logo">
           <img
             src={logoSc}

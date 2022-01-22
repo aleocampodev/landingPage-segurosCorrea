@@ -42,23 +42,20 @@ const Principles = () => {
             className="image"
           />
         </div>
-        <div className="content">
-          <h2
-            className="major major-secondary"
-            data-sal="slide-left"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
-          >
+        <div
+          className="content"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
+          <h2 className="major major-secondary">
             {data.allMarkdownRemark.nodes[0].frontmatter.title}
           </h2>
           <div
             className="listGreen"
             dangerouslySetInnerHTML={{ __html: principles }}
-            data-sal="slide-up"
-            data-sal-duration="1000"
-            data-sal-delay="300"
-            data-sal-easing="ease"
           ></div>
         </div>
       </div>

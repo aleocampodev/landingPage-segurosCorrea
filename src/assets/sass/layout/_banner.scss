@@ -86,6 +86,7 @@
   }
 
   @include breakpoint('<=small') {
+    width: 100%;
     @include padding(5em, 2em, (0, 0, _size(wrapper-edges, small) * 0.5, 0));
 
     margin-bottom: (_size(wrapper-edges, small) * -1);
@@ -141,5 +142,9 @@
     }
     border-bottom: solid 2px _palette(bg-secondary);
     margin-bottom: 25px;
+  }
+
+  @include breakpoint('<=xsmall') {
+    max-width: 100%;
   }
 }

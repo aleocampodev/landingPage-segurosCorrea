@@ -28,22 +28,10 @@ const HeadInsurers = () => {
   `);
   return (
     <>
-      <h2
-        className=" major-secondary"
-        data-sal="slide-left"
-        data-sal-duration="1000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-      >
+      <h2 className=" major-secondary">
         {data.allMarkdownRemark.nodes[0].frontmatter.title}
       </h2>
-      <p
-        className="paragraph-secondary"
-        data-sal="slide-up"
-        data-sal-duration="1000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
-      >
+      <p className="paragraph-secondary">
         {data.allMarkdownRemark.nodes[0].frontmatter.description}
       </p>
     </>

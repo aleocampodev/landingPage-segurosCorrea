@@ -33,7 +33,7 @@
     top: 76%;
   }
 
-  @include breakpoint('<=xsmall') {
-    left: 79%;
+  @include breakpoint('<=xxsmall') {
+    left: 73%;
   }
 }

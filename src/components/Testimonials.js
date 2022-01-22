@@ -32,22 +32,10 @@ const Testimonials = () => {
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3 ">
       <div className="inner testimonialsCard" id="testimonios">
-        <h2
-          className="major major-secondary testimonialsTitle"
-          data-sal="slide-right"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
+        <h2 className="major major-secondary testimonialsTitle">
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
-        <div
-          className="testimonials"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-delay="300"
-          data-sal-easing="ease"
-        >
+        <div className="testimonials" data-aos="fade-right">
           {data.allMarkdownRemark.nodes
             .filter((node, index) => index >= 1)
             .map((node, index) => {
