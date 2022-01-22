@@ -34,7 +34,7 @@ const Wrapper = () => {
  
   const content = data.allMarkdownRemark.nodes[1].html;
 
-  console.log(data, 'bu');
+ 
 
   useEffect(() => {
     AOS.init();
