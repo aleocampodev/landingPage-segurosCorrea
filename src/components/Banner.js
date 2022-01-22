@@ -29,7 +29,6 @@ const Banner = () => {
       }
     }
   `);
-  console.log(data, 'banner');
 
   useEffect(() => {
     AOS.init();

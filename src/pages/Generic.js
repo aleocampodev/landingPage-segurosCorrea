@@ -32,7 +32,7 @@ const IndexPage = () => {
       }
     }
   `);
-  console.log(data, 'generic');
+
   return (
     <>
       <Layout fullMenu>

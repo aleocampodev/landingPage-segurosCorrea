@@ -29,7 +29,6 @@ const Principles = () => {
     }
   `);
 
-  console.log(data, 'principles');
   const principles = data.allMarkdownRemark.nodes[0].html;
 
   return (

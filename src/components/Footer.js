@@ -27,7 +27,6 @@ export default function Footer() {
     }
   `);
 
-  console.log(data, 'footer');
   const backgroundFooter =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
 

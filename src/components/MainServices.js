@@ -26,7 +26,7 @@ const MainServices = () => {
       }
     }
   `);
-  console.log(data, 'main services');
+  
   return (
     <div className="inner">
       <h2 className="major-secondary">

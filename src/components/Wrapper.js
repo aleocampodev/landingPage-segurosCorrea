@@ -31,7 +31,7 @@ const Wrapper = () => {
     }
   `);
 
-  console.log(data, 'wrapper');
+ 
   const content = data.allMarkdownRemark.nodes[1].html;
 
   console.log(data, 'bu');

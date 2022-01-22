@@ -27,7 +27,7 @@ const Services = () => {
       }
     }
   `);
-  console.log(data, 'services');
+
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">

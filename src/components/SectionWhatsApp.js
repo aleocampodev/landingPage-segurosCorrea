@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
-import { gsap } from 'gsap';
 import AOS from 'aos';
 
 import whatsApp from '../assets/folderImages/images/whatsapp.png';
@@ -35,7 +34,6 @@ const SectionWhatsApp = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-  console.log(data, 'hola');
 
   const number = data.allMarkdownRemark.nodes[0].frontmatter.title;
   const message = data.allMarkdownRemark.nodes[0].frontmatter.description;
