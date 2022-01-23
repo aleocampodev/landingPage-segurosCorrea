@@ -13,7 +13,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
-    "gatsby": "^3.0.0",
+    "gatsby": "^2.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-netlify-cms": "^6.5.0",
     "gatsby-plugin-purgecss": "^6.1.0",
