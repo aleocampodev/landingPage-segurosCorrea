@@ -93,7 +93,7 @@ export default function Footer() {
           })}
         </ul>
         <ul className="copyright">
-          <li>{data.allMarkdownRemark.nodes[0s].frontmatter.title} </li>
+          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>
