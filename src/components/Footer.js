@@ -55,7 +55,7 @@ export default function Footer() {
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
-        <form method="post" name="contact" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>

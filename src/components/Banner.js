@@ -30,8 +30,8 @@ const Banner = () => {
   `);
 
   const backgroundPic =
-    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
-  const logoSc = data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
+    data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
+  const logoSc = data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
 
   return (
     <section
@@ -48,15 +48,15 @@ const Banner = () => {
         <div className="logo">
           <img
             src={logoSc}
-            alt={data.allMarkdownRemark.nodes[1].frontmatter.image.alt}
+            alt={data.allMarkdownRemark.nodes[0].frontmatter.image.alt}
             className="icon"
           />
         </div>
         <div className="header-text">
-          <h2>{data.allMarkdownRemark.nodes[0].frontmatter.title}</h2>
-          <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
+          <h2>{data.allMarkdownRemark.nodes[1].frontmatter.title}</h2>
+          <p>{data.allMarkdownRemark.nodes[1].frontmatter.description}</p>
         </div>
-        <p>{data.allMarkdownRemark.nodes[0].frontmatter.subtitle}</p>
+        <p>{data.allMarkdownRemark.nodes[1].frontmatter.subtitle}</p>
       </div>
     </section>
   );
