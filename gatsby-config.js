@@ -51,8 +51,5 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-    },
   ],
 };
