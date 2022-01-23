@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import config from '../../config';
 import { useStaticQuery, graphql } from 'gatsby';
+import AOS from 'aos';
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
@@ -26,6 +27,10 @@ export default function Footer() {
       }
     }
   `);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const backgroundFooter =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;

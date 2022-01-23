@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -30,6 +30,8 @@ const Principles = () => {
   `);
 
   const principles = data.allMarkdownRemark.nodes[0].html;
+
+
 
   return (
     <section id="two" className="wrapper alt spotlight style2">
