@@ -36,12 +36,6 @@ export default function Footer() {
     AOS.refresh();
   }, []);
 
-  onSubmit (event) {
-    event.preventDefault();
-  
-    // custom form handling here
-  }
-
   const backgroundFooter =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
 
@@ -61,11 +55,7 @@ export default function Footer() {
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
-        <form
-          method="post"
-          name="contact"
-          data-netlify="true"
-        >
+        <form method="post" name="contact" data-netlify="true">
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>
