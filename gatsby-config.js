@@ -34,8 +34,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
-    'gatsby-transformer-remark-frontmatter',
-    `gatsby-plugin-netlify-cms`,
+
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
@@ -50,6 +49,9 @@ module.exports = {
           'slick-theme',
         ],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
     },
   ],
 };
