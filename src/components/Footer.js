@@ -34,10 +34,11 @@ export default function Footer() {
      * therefore this import is required either in useEffect or componentDidMount as they
      * are exclusively executed on a client
      */
-    const AOS = require('aos');
-    AOS.init({
-      once: true,
-    });
+    const isBrowser = typeof window !== 'undefined';
+    const AOS = isBrowser ? require('aos') : undefined;
+
+    this.aos = AOS;
+    this.aos.init();
   }, []);
 
   useEffect(() => {
