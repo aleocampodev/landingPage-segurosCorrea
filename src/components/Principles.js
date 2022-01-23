@@ -46,14 +46,7 @@ const Principles = () => {
             className="image"
           />
         </div>
-        <div
-          className="content"
-          data-aos="fade-right"
-          data-aos-offset="200"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-        >
+        <div className="content">
           <h2 className="major major-secondary">
             {data.allMarkdownRemark.nodes[0].frontmatter.title}
           </h2>

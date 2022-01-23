@@ -31,10 +31,7 @@ const Wrapper = () => {
     }
   `);
 
- 
   const content = data.allMarkdownRemark.nodes[1].html;
-
- 
 
   useEffect(() => {
     AOS.init();
@@ -54,7 +51,7 @@ const Wrapper = () => {
                 className="image2"
               />
             </div>
-            <div className="content" data-aos="fade-left">
+            <div className="content">
               <h2 className="major major-secondary aboutTitle">
                 {data.allMarkdownRemark.nodes[1].frontmatter.title}
               </h2>
@@ -79,14 +76,7 @@ const Wrapper = () => {
               />
             </div>
             <div className="content">
-              <h2
-                className="content-opinion"
-                data-aos="fade-right"
-                data-aos-offset="200"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out"
-              >
+              <h2 className="content-opinion">
                 {data.allMarkdownRemark.nodes[0].frontmatter.title}
               </h2>
             </div>

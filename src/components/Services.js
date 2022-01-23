@@ -32,14 +32,7 @@ const Services = () => {
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">
         <HeadServices />
-        <section
-          className="features"
-          data-aos="fade-right"
-          data-aos-offset="200"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-        >
+        <section className="features">
           <div className="features-product">
             {data.allMarkdownRemark.nodes
               .sort((a, b) => a.identifier - b.identifier)

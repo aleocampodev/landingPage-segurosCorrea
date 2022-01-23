@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
-import AOS from 'aos';
+
 
 import '../assets/sass/main.scss';
 
@@ -30,9 +30,6 @@ const Banner = () => {
     }
   `);
 
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const backgroundPic =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
