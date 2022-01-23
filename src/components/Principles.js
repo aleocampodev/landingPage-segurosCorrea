@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
+import AOS from 'aos';
 
 import '../assets/sass/main.scss';
 
@@ -31,7 +32,9 @@ const Principles = () => {
 
   const principles = data.allMarkdownRemark.nodes[0].html;
 
-
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section id="two" className="wrapper alt spotlight style2">
