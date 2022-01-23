@@ -27,7 +27,7 @@ const Testimonials = () => {
     }
   `);
 
-  console.log(data, 'testimonials');
+  
 
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3 ">

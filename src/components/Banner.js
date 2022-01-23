@@ -34,8 +34,6 @@ const Banner = () => {
     AOS.init();
   }, []);
 
-  console.log(data, 'banner');
-
   const backgroundPic =
     data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
   const logoSc = data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
