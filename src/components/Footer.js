@@ -29,8 +29,22 @@ export default function Footer() {
   `);
 
   useEffect(() => {
-    AOS.init();
+    /**
+     * Server-side rendering does not provide the 'document' object
+     * therefore this import is required either in useEffect or componentDidMount as they
+     * are exclusively executed on a client
+     */
+    const AOS = require('aos');
+    AOS.init({
+      once: true,
+    });
   }, []);
+
+  useEffect(() => {
+    if (AOS) {
+      AOS.refresh();
+    }
+  });
 
   const backgroundFooter =
     data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
