@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import config from '../../config';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import AOS from 'aos';
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
