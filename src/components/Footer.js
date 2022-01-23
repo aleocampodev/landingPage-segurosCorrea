@@ -36,6 +36,12 @@ export default function Footer() {
     AOS.refresh();
   }, []);
 
+  onSubmit (event) {
+    event.preventDefault();
+  
+    // custom form handling here
+  }
+
   const backgroundFooter =
     data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
 
@@ -59,8 +65,6 @@ export default function Footer() {
           method="post"
           name="contact"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit="submit"
         >
           <div className="fields">
             <div className="field">
