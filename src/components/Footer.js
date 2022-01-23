@@ -28,17 +28,17 @@ export default function Footer() {
     }
   `);
 
+  let AOS;
   useEffect(() => {
     /**
      * Server-side rendering does not provide the 'document' object
      * therefore this import is required either in useEffect or componentDidMount as they
      * are exclusively executed on a client
      */
-    const isBrowser = typeof window !== 'undefined';
-    const AOS = isBrowser ? require('aos') : undefined;
-
-    this.aos = AOS;
-    this.aos.init();
+    const AOS = require('aos');
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   useEffect(() => {
