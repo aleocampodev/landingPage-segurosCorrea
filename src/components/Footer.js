@@ -37,7 +37,7 @@ export default function Footer() {
   }, []);
 
   const backgroundFooter =
-    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
+    data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL;
 
   return (
     <section
@@ -52,14 +52,14 @@ export default function Footer() {
     >
       <div className="inner" id="contacto">
         <h2 className="major major-secondary">
-          {data.allMarkdownRemark.nodes[0].frontmatter.title}
+          {data.allMarkdownRemark.nodes[1].frontmatter.title}
         </h2>
-        <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
+        <p>{data.allMarkdownRemark.nodes[1].frontmatter.description}</p>
         <form
           name="contact"
           method="POST"
           data-netlify="true"
-          action="/Gracias"
+          action="/thank-you"
           netlify-honeypot="bot-field"
         >
           <div className="fields">
@@ -93,7 +93,7 @@ export default function Footer() {
           })}
         </ul>
         <ul className="copyright">
-          <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
+          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>
