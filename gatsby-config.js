@@ -48,6 +48,10 @@ module.exports = {
           'slick-current',
           'slick-theme',
         ],
+        ignore: [
+          '/node_modules/slick-carousel/slick/slick.css',
+          '/node_modules/slick-carousel/slick/slick-theme.css',
+        ],
       },
     },
     {
