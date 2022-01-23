@@ -71,11 +71,6 @@ export default function Footer() {
           name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          data-aos="fade-right"
-          data-aos-offset="200"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
         >
           <div className="fields">
             <div className="field">

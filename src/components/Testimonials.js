@@ -33,7 +33,7 @@ const Testimonials = () => {
         <h2 className="major major-secondary testimonialsTitle">
           {data.allMarkdownRemark.nodes[1].frontmatter.title}
         </h2>
-        <div className="testimonials" data-aos="fade-right">
+        <div className="testimonials">
           {data.allMarkdownRemark.nodes
             .filter((node, index) => index >= 1)
             .map((node, index) => {
