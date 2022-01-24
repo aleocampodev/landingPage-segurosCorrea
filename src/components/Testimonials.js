@@ -35,7 +35,7 @@ const Testimonials = () => {
         </h2>
         <div className="testimonials">
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index <= 1)
+            .filter((node, index) => index >= 1)
             .map((node, index) => {
               return (
                 <div className="card" key={index}>
