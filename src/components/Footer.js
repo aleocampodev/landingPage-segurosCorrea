@@ -61,7 +61,9 @@ export default function Footer() {
           data-netlify="true"
           action="/thank-you"
           netlify-honeypot="bot-field"
+          onSubmit="submit"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>
