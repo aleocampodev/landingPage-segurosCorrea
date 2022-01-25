@@ -15,7 +15,6 @@
     "aos": "^3.0.0-beta.6",
     "gatsby": "^2.0.0",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-fontawesome-css": "^1.2.0",
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-mdx": "^3.5.2",
     "gatsby-plugin-netlify-cms": "^3.0.18",

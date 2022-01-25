@@ -34,7 +34,6 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
-    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -46,6 +45,7 @@ module.exports = {
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
         icon: config.manifestIcon, // This path is relative to the root of the site.
+        include_favicon: false,
       },
     },
 
