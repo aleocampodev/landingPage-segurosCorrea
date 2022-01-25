@@ -36,8 +36,9 @@ export default function Footer() {
     AOS.refresh();
   }, []);
 
-  const backgroundFooter =
-    data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL;
+  const backgroundFooter = data.allMarkdownRemark.nodes.find(
+    element => element.frontmatter.title === 'Contacto'
+  ).frontmatter.image.publicURL;
 
   return (
     <section

@@ -31,11 +31,15 @@ const Testimonials = () => {
     <section id="three" className="wrapper spotlight spotlight1 style3 ">
       <div className="inner testimonialsCard" id="testimonios">
         <h2 className="major major-secondary testimonialsTitle">
-          {data.allMarkdownRemark.nodes[0].frontmatter.title}
+          {
+            data.allMarkdownRemark.nodes.find(
+              element => element.frontmatter.title === 'Testimonios'
+            ).frontmatter.title
+          }
         </h2>
         <div className="testimonials">
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index >= 1)
+            .filter((node, index) => index <= 1)
             .map((node, index) => {
               return (
                 <div className="card" key={index}>

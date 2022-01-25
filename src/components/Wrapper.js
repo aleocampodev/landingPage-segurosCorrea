@@ -5,6 +5,7 @@ import AOS from 'aos';
 import Services from './Services';
 import Testimonials from '../components/Testimonials';
 import Principles from '../components/Principles';
+import About from '../components/About';
 
 const Wrapper = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +32,12 @@ const Wrapper = () => {
     }
   `);
 
-  const content = data.allMarkdownRemark.nodes[0].html;
+  const img = data.allMarkdownRemark.nodes.find(
+    element => element.frontmatter.alt === 'Brindando un buen servicio'
+  ).frontmatter.image.publicURL;
+  const textphrase = data.allMarkdownRemark.nodes.find(
+    element => element.frontmatter.alt === 'Brindando un buen servicio'
+  );
 
   useEffect(() => {
     AOS.init();
@@ -40,44 +46,22 @@ const Wrapper = () => {
   return (
     <div>
       <section id="wrapper">
-        <section id="one" className="wrapper spotlight style1">
-          <div className="inner" id="#loquehago">
-            <div className="image">
-              <img
-                src={
-                  data.allMarkdownRemark.nodes[0].frontmatter.image.publicURL
-                }
-                alt={data.allMarkdownRemark.nodes[0].frontmatter.alt}
-                className="image2"
-              />
-            </div>
-            <div className="content">
-              <h2 className="major major-secondary aboutTitle">
-                {data.allMarkdownRemark.nodes[0].frontmatter.title}
-              </h2>
-              <div
-                className="paragraph-secondary "
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
-            </div>
-          </div>
-        </section>
+        <About />
         <Principles />
 
         <section id="three" className="wrapper spotlight style3">
           <div className="inner">
             <div className="image">
-              <img
-                src={
-                  data.allMarkdownRemark.nodes[1].frontmatter.image.publicURL
-                }
-                alt={data.allMarkdownRemark.nodes[1].frontmatter.alt}
-                className="image2"
-              />
+              <img src={img} alt={textphrase} className="image2" />
             </div>
             <div className="content">
               <h2 className="content-opinion">
-                {data.allMarkdownRemark.nodes[1].frontmatter.title}
+                {
+                  data.allMarkdownRemark.nodes.find(
+                    element =>
+                      element.frontmatter.alt === 'Brindando un buen servicio'
+                  ).frontmatter.title
+                }
               </h2>
             </div>
           </div>
