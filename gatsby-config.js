@@ -31,10 +31,10 @@ module.exports = {
         path: `${__dirname}/src/assets/folderImages`,
       },
     },
-    'gatsby-plugin-sass',
+
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
-    'gatsby-plugin-offline',
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -48,6 +48,8 @@ module.exports = {
         include_favicon: false,
       },
     },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-sass',
 
     {
       resolve: `gatsby-plugin-purgecss`,
