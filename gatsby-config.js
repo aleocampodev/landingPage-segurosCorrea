@@ -34,6 +34,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
+    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-manifest`,
