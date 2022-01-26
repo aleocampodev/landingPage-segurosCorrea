@@ -60,7 +60,7 @@ const Services = () => {
         </section>
         <ul className="actions">
           <li>
-            <Link to="/Generic" className="button">
+            <Link to="/Servicios" className="button">
               Ver más
             </Link>
           </li>
