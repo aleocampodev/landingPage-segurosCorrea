@@ -35,10 +35,6 @@ export default function Footer() {
     formState: { errors },
   } = useForm();
 
-  const handleSubmit = e => {
-    console.log(e);
-  };
-
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -72,7 +68,6 @@ export default function Footer() {
           data-netlify="true"
           action="/thanks/"
           netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
