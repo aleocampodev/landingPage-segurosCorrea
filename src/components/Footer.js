@@ -46,6 +46,21 @@ export default function Footer() {
     element => element.frontmatter.title === 'Contacto'
   ).frontmatter.image.publicURL;
 
+  const onSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(error => alert(error));
+  };
+
   return (
     <section
       id="footer"
@@ -66,8 +81,9 @@ export default function Footer() {
           name="contact"
           method="POST"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
           action="/thanks/"
-          netlify-honeypot="bot-field"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
