@@ -7,7 +7,7 @@ module.exports = {
     description: 'Empresa de consultoría',
     keywords:
       "seguros, seguros de carro, seguros de automovil, seguro educativo, ahorro, inversión, responsabilidad civil, sura, seguros bolivar'",
-    image: '/src/assets/folderImages/img/logoSC.jpeg',
+    image: config.manifestIcon,
   },
   plugins: [
     {
@@ -45,7 +45,6 @@ module.exports = {
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
         icon: config.manifestIcon, // This path is relative to the root of the site.
-        include_favicon: false,
       },
     },
     'gatsby-plugin-offline',
@@ -68,6 +67,22 @@ module.exports = {
           '/node_modules/slick-carousel/slick/slick.css',
           '/node_modules/slick-carousel/slick/slick-theme.css',
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.001, // Percentage of an element's area that needs to be visible to launch animation
+        once: true, // Defines if animation needs to be launched once
+        disable: true, // Flag for disabling animations
+
+        
+        selector: '[data-sal]', // Selector of the elements to be animated
+        animateClassName: 'sal-animate', // Class name which triggers animation
+        disabledClassName: 'sal-disabled', // Class name which defines the disabled state
+        rootMargin: '0% 10%', // Corresponds to root's bounding box margin
+        enterEventName: 'sal:in', // Enter event name
+        exitEventName: 'sal:out', // Exit event name
       },
     },
     {

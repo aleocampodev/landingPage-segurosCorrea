@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import HeaderTestimonials from './HeaderTestimonials';
 import '../assets/sass/main.scss';
 
 const Testimonials = () => {
@@ -27,19 +28,15 @@ const Testimonials = () => {
     }
   `);
 
+  console.log(data, 'testimonials');
+
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3 ">
       <div className="inner testimonialsCard" id="testimonios">
-        <h2 className="major major-secondary testimonialsTitle">
-          {
-            data.allMarkdownRemark.nodes.find(
-              element => element.frontmatter.title === 'Testimonios'
-            ).frontmatter.title
-          }
-        </h2>
+        <HeaderTestimonials />
         <div className="testimonials">
           {data.allMarkdownRemark.nodes
-            .filter((node, index) => index >= 1)
+            .filter((node, index) => index <= 1)
             .map((node, index) => {
               return (
                 <div className="card" key={index}>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import config from '../../config';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useForm } from 'react-hook-form';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -28,6 +29,15 @@ export default function Footer() {
       }
     }
   `);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = data2 => {
+    console.log(data2);
+  };
 
   useEffect(() => {
     AOS.init({
@@ -53,30 +63,84 @@ export default function Footer() {
     >
       <div className="inner" id="contacto">
         <h2 className="major major-secondary">
-          {data.allMarkdownRemark.nodes[1].frontmatter.title}
+          {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
-        <p>{data.allMarkdownRemark.nodes[1].frontmatter.description}</p>
+        <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
         <form
           name="contact"
           method="POST"
           data-netlify="true"
           action="/thank-you"
           netlify-honeypot="bot-field"
-          onSubmit="submit"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
             <div className="field">
               <label htmlFor="name">Nombre</label>
-              <input type="text" name="name" id="name" />
+              <input
+                autoComplete="off"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Nombre"
+                {...register('name', {
+                  required: {
+                    value: true,
+                    message: 'El campo es requerido',
+                  },
+                  minLength: {
+                    value: 6,
+                    message: 'El nombre debe tener al menos 6 caracteres',
+                  },
+                })}
+              />
+              {errors.name && (
+                <span className="form-errors">Este campo es requerido</span>
+              )}
             </div>
             <div className="field">
               <label htmlFor="email">Correo</label>
-              <input type="email" name="email" id="email" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="ejemplo@gmail.com"
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: 'El campo es requerido',
+                  },
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: 'El formato no es correcto',
+                  },
+                })}
+              />
+              {errors.name && (
+                <span className="form-errors">El formato no es correcto</span>
+              )}
             </div>
             <div className="field">
               <label htmlFor="message">Mensaje</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                placeholder="Mensaje"
+                {...register('message', {
+                  required: {
+                    value: true,
+                  },
+                  minLength: {
+                    value: 6,
+                    message: 'El mensaje debe tener al menos 6 caracteres',
+                  },
+                })}
+              ></textarea>
+              {errors.name && (
+                <span className="form-errors">Este campo es requerido</span>
+              )}
             </div>
           </div>
           <ul className="actions">
@@ -98,7 +162,7 @@ export default function Footer() {
           })}
         </ul>
         <ul className="copyright">
-          <li>{data.allMarkdownRemark.nodes[0].frontmatter.title} </li>
+          <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>
           <li>&copy; {new Date().getFullYear()}</li>
         </ul>
       </div>

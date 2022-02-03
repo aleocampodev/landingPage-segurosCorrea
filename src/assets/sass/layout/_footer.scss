@@ -64,6 +64,10 @@
     }
   }
 
+  .form-errors{
+    color:red
+  }
+
   @include breakpoint('<=large') {
     margin-top: (_size(wrapper-edges, large) * -1);
     padding-top: _size(wrapper-edges, large);

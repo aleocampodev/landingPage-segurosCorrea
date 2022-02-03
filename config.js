@@ -6,7 +6,7 @@ module.exports = {
   manifestBackgroundColor: '#192665',
   manifestThemeColor: '#689F38',
   manifestDisplay: 'standalone',
-  manifestIcon: 'src/assets/folderImages/img/logoSC.jpeg',
+  manifestIcon: './src/assets/folderImages/img/logoSC.jpeg',
   pathPrefix: `/seguros-correa/`, // This path is subpath of your hosting https://domain/portfolio
   // social
   socialLinks: [
