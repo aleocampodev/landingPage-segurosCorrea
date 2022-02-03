@@ -35,8 +35,8 @@ export default function Footer() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data2 => {
-    console.log(data2);
+  const handleSubmit = e => {
+    console.log(e);
   };
 
   useEffect(() => {
@@ -70,9 +70,9 @@ export default function Footer() {
           name="contact"
           method="POST"
           data-netlify="true"
-          action="/confirmation"
+          action="/thanks/"
           netlify-honeypot="bot-field"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
