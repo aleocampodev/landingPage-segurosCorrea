@@ -70,7 +70,7 @@ export default function Footer() {
           name="contact"
           method="POST"
           data-netlify="true"
-          action="/src/pages/confirmation.js"
+          action="/pages/confirmation"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit(onSubmit)}
         >
