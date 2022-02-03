@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function confirmation() {
+const Confirmation = () => {
   return <div>Hola</div>;
-}
+};
+
+export default Confirmation;
