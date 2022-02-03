@@ -27,8 +27,6 @@ const Testimonials = () => {
     }
   `);
 
-  console.log(data, 'testimonialsf');
-
   return (
     <section id="three" className="wrapper spotlight spotlight1 style3 ">
       <div className="inner testimonialsCard" id="testimonios">

@@ -32,6 +32,7 @@ export default function Footer() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -46,20 +47,28 @@ export default function Footer() {
     element => element.frontmatter.title === 'Contacto'
   ).frontmatter.image.publicURL;
 
-  /*const onSubmit = e => {
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
+  const onSubmit = e => {
     e.preventDefault();
-    const form = e.target;
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
+        'form-name': 'contact',
+        //...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => {
+        console.log('hola');
+        reset();
+      })
       .catch(error => alert(error));
-  };*/
+  };
 
   return (
     <section
@@ -83,6 +92,7 @@ export default function Footer() {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           action="/confirmation"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="fields">
