@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import config from '../../config';
-import { useStaticQuery, graphql } from 'gatsby';
-import { useForm } from 'react-hook-form';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { useStaticQuery, graphql, navigate } from 'gatsby';
+
+const encode = data2 => {
+  return Object.keys(data2)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data2[key]))
+    .join('&');
+};
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
@@ -29,47 +33,32 @@ export default function Footer() {
       }
     }
   `);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
 
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-    AOS.refresh();
-  }, []);
+  const [token, setToken] = useState(null);
 
   const backgroundFooter = data.allMarkdownRemark.nodes.find(
     element => element.frontmatter.title === 'Contacto'
   ).frontmatter.image.publicURL;
 
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
-  const onSubmit = e => {
-    e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'contact',
-        //...state,
-      }),
-    })
-      .then(() => {
-        console.log('hola');
-        reset();
+  const handleSubmit = (data2, {resetForm} ) => {
+    console.log(data2, 'hola data');
+    if (token !== null) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          ...data2,
+        }),
       })
-      .catch(error => alert(error));
+        .then(() => {
+          alert("send");
+          resetForm();
+          navigate('/thanks/');
+        })
+        .catch(error => console.log(error));
+    }
   };
-
   return (
     <section
       id="footer"
@@ -86,89 +75,73 @@ export default function Footer() {
           {data.allMarkdownRemark.nodes[0].frontmatter.title}
         </h2>
         <p>{data.allMarkdownRemark.nodes[0].frontmatter.description}</p>
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          action="/confirmation"
-          onSubmit={handleSubmit(onSubmit)}
+        <Formik
+          initialValues={{ name: '', email: '', message: '' }}
+          validate={values => {
+            const errors = {};
+            if (!values.name) {
+              errors.name = 'Requerido';
+            } else if (values.name.length <= 1) {
+              errors.name = 'Debe tener más de 2 caracteres';
+            }
+            if (!values.email) {
+              errors.email = 'Requerido';
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+            ) {
+              errors.email = 'Cuenta de email invalido';
+            }
+            if (!values.message) {
+              errors.message = 'Requerido';
+            } else if (values.name.length <= 1) {
+              errors.message = 'Debe tener más de dos caracteres';
+            }
+            return errors;
+          }}
+          onSubmit={handleSubmit}
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <div className="fields">
-            <div className="field">
-              <label htmlFor="name">Nombre</label>
-              <input
-                autoComplete="off"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Nombre"
-                {...register('name', {
-                  required: {
-                    value: true,
-                    message: 'El campo es requerido',
-                  },
-                  minLength: {
-                    value: 6,
-                    message: 'El nombre debe tener al menos 6 caracteres',
-                  },
-                })}
-              />
-              {errors.name && (
-                <span className="form-errors">Este campo es requerido</span>
-              )}
+          <Form
+            name="contact"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <Field type="hidden" name="form-name" />
+            <Field type="hidden" name="bot-field" />
+            <div className="fields">
+              <div className="field">
+                <label htmlFor="name">Nombre</label>
+                <Field type="text" name="name" id="name" placeholder="Nombre" />
+                <ErrorMessage name="name" />
+              </div>
+              <div className="field">
+                <label htmlFor="email">Correo</label>
+                <Field
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="ejemplo@gmail.com"
+                />
+                <ErrorMessage name="email" />
+              </div>
+              <div className="field">
+                <label htmlFor="message">Mensaje</label>
+                <Field
+                  name="message"
+                  id="message"
+                  rows="4"
+                  as="textarea"
+                  placeholder="Mensaje"
+                />
+                <ErrorMessage name="message" />
+              </div>
             </div>
-            <div className="field">
-              <label htmlFor="email">Correo</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="ejemplo@gmail.com"
-                {...register('email', {
-                  required: {
-                    value: true,
-                    message: 'El campo es requerido',
-                  },
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: 'El formato no es correcto',
-                  },
-                })}
-              />
-              {errors.name && (
-                <span className="form-errors">El formato no es correcto</span>
-              )}
-            </div>
-            <div className="field">
-              <label htmlFor="message">Mensaje</label>
-              <textarea
-                name="message"
-                id="message"
-                rows="4"
-                placeholder="Mensaje"
-                {...register('message', {
-                  required: {
-                    value: true,
-                  },
-                  minLength: {
-                    value: 6,
-                    message: 'El mensaje debe tener al menos 6 caracteres',
-                  },
-                })}
-              ></textarea>
-              {errors.name && (
-                <span className="form-errors">Este campo es requerido</span>
-              )}
-            </div>
-          </div>
-          <ul className="actions">
-            <li>
-              <input type="submit" value="Enviar" />
-            </li>
-          </ul>
-        </form>
+            <ul className="actions">
+              <li>
+                <input type="submit" value="Enviar" />
+              </li>
+            </ul>
+          </Form>
+        </Formik>
         <ul className="contact">
           {config.socialLinks.map(social => {
             const { icon, url } = social;

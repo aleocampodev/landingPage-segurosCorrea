@@ -13,6 +13,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
+    "formik": "^2.2.9",
     "gatsby": "^2.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-manifest": "^2.5.2",
@@ -33,7 +34,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "react-hook-form": "^7.25.3",
     "react-images": "^1.1.0",
     "react-scrollspy": "^3.4.2",
     "react-slick": "^0.28.1",
