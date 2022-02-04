@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import config from '../../config';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useStaticQuery, graphql, navigate } from 'gatsby';
@@ -34,30 +34,27 @@ export default function Footer() {
     }
   `);
 
-  const [token, setToken] = useState(null);
-
   const backgroundFooter = data.allMarkdownRemark.nodes.find(
     element => element.frontmatter.title === 'Contacto'
   ).frontmatter.image.publicURL;
 
-  const handleSubmit = (data2, {resetForm} ) => {
-    console.log(data2, 'hola data');
-    if (token !== null) {
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'contact',
-          ...data2,
-        }),
+  const handleSubmit = (values, actions) => {
+    console.log(values, 'hola data');
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...values,
+      }),
+    })
+      .then(() => {
+        alert('send');
+        actions.resetForm();
+        navigate('/confirmation');
       })
-        .then(() => {
-          alert("send");
-          resetForm();
-          navigate('/thanks/');
-        })
-        .catch(error => console.log(error));
-    }
+      .catch(error => console.log(error));
   };
   return (
     <section
