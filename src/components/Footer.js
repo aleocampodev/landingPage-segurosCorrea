@@ -50,11 +50,12 @@ export default function Footer() {
       }),
     })
       .then(() => {
-        alert('send');
         actions.resetForm();
         navigate('/confirmation');
       })
-      .catch(error => console.log(error));
+      .catch(error =>
+        alert('Lo  sentimos ha ocurrido un error, intentalo mas tarde')
+      );
   };
   return (
     <section
