@@ -33,7 +33,9 @@ const Services = () => {
 
   useEffect(() => {
     Aos.init({
+      offset:100,
       duration: 2000,
+      easing:'ease'
     });
   }, []);
 

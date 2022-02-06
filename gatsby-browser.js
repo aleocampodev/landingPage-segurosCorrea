@@ -7,4 +7,9 @@
 // You can delete this file if you're not using it
 import './src/animate.min.css';
 
+import Aos from 'aos';
+import '../../node_modules/aos/dist/aos.css';
+
+Aos.init()
+
 
