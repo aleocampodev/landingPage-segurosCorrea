@@ -4,8 +4,7 @@ import Insurers from './Insurers';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import HeadServices from './HeadServices';
 import Aos from 'aos';
-import '../../node_modules/aos/dist/aos.css';
-
+import 'aos/dist/aos.css';
 
 const Services = () => {
   const data = useStaticQuery(graphql`
@@ -33,9 +32,9 @@ const Services = () => {
 
   useEffect(() => {
     Aos.init({
-      offset:100,
+      offset: 100,
       duration: 2000,
-      easing:'ease'
+      easing: 'ease',
     });
   }, []);
 

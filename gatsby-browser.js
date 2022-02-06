@@ -8,8 +8,6 @@
 import './src/animate.min.css';
 
 import Aos from 'aos';
-import '../../node_modules/aos/dist/aos.css';
+import 'aos/dist/aos.css';
 
-Aos.init()
-
-
+Aos.init();
