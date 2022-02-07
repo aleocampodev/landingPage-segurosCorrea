@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import Insurers from './Insurers';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import HeadServices from './HeadServices';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos';
+import '../../node_modules/aos/dist/aos.css';
 
 const Services = () => {
   const data = useStaticQuery(graphql`
@@ -31,32 +31,29 @@ const Services = () => {
   `);
 
   useEffect(() => {
-    Aos.init({
+    AOS.init({
       duration: 2000,
       easing: 'ease',
       once: true,
       animatedClassName: 'aos-animate', // class applied on animation
     });
+    AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    if (Aos) {
-      Aos.refresh();
-    }
-  });
+ 
 
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">
         <HeadServices />
         <section className="features">
-          <div className="features-product">
+          <div className="features-product " data-aos="fade-up">
             {data.allMarkdownRemark.nodes
               .sort((a, b) => a.identifier - b.identifier)
               .map((node, index) => {
                 const text = node.html;
                 return (
-                  <div className="maincontainer" key={index} data-aos="fade-up">
+                  <div className="maincontainer" key={index}>
                     <div className="back">
                       <h2>{node.frontmatter.title}</h2>
                       <div dangerouslySetInnerHTML={{ __html: text }}></div>
