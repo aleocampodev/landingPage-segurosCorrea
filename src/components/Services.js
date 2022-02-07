@@ -32,11 +32,10 @@ const Services = () => {
 
   useEffect(() => {
     Aos.init({
-      offset: 100,
       duration: 2000,
       easing: 'ease',
+      once:true,
       animatedClassName: 'aos-animate', // class applied on animation
-      useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
     });
     Aos.refresh();
   }, []);
