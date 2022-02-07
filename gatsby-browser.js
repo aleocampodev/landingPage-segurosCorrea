@@ -12,4 +12,8 @@ import 'aos/dist/aos.css';
 
 Aos.init({
   once: true,
+  duration: 2000,
+  easing: 'ease',
+  once: true,
+  animatedClassName: 'aos-animate', // class applied on animation
 });
