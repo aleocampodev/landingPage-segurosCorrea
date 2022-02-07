@@ -37,7 +37,6 @@ const Services = () => {
       once:true,
       animatedClassName: 'aos-animate', // class applied on animation
     });
-    Aos.refresh();
   }, []);
 
   return (

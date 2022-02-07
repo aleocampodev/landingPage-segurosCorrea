@@ -10,10 +10,4 @@ import './src/animate.min.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-Aos.init({
-  once: true,
-  duration: 2000,
-  easing: 'ease',
-  once: true,
-  animatedClassName: 'aos-animate', // class applied on animation
-});
+Aos.init();
