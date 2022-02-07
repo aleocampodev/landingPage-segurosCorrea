@@ -40,14 +40,17 @@ const Services = () => {
     AOS.refresh();
   }, []);
 
- 
-
   return (
     <section id="four" className="wrapper alt style1">
       <div className="inner" id="servicios">
         <HeadServices />
         <section className="features">
-          <div className="features-product " data-aos="fade-up">
+          <div
+            className="features-product "
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+          >
             {data.allMarkdownRemark.nodes
               .sort((a, b) => a.identifier - b.identifier)
               .map((node, index) => {
