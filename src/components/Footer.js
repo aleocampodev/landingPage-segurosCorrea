@@ -1,5 +1,4 @@
 import React from 'react';
-import config from '../../config';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useStaticQuery, graphql, navigate } from 'gatsby';
 
@@ -39,8 +38,6 @@ export default function Footer() {
   ).frontmatter.image.publicURL;
 
   const handleSubmit = (values, actions) => {
-    console.log(values, 'hola data');
-
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -51,7 +48,7 @@ export default function Footer() {
     })
       .then(() => {
         actions.resetForm();
-        navigate('/confirmation');
+        navigate('/Confirmacion');
       })
       .catch(error =>
         alert('Lo  sentimos ha ocurrido un error, intentalo mas tarde')
@@ -109,7 +106,9 @@ export default function Footer() {
               <div className="field">
                 <label htmlFor="name">Nombre</label>
                 <Field type="text" name="name" id="name" placeholder="Nombre" />
-                <ErrorMessage name="name" />
+                <ErrorMessage name="name">
+                  {msg => <p className="form-errors">{msg}</p>}
+                </ErrorMessage>
               </div>
               <div className="field">
                 <label htmlFor="email">Correo</label>
@@ -119,7 +118,9 @@ export default function Footer() {
                   id="email"
                   placeholder="ejemplo@gmail.com"
                 />
-                <ErrorMessage name="email" />
+                <ErrorMessage name="email">
+                  {msg => <p className="form-errors">{msg}</p>}
+                </ErrorMessage>
               </div>
               <div className="field">
                 <label htmlFor="message">Mensaje</label>
@@ -130,7 +131,9 @@ export default function Footer() {
                   as="textarea"
                   placeholder="Mensaje"
                 />
-                <ErrorMessage name="message" />
+                <ErrorMessage name="message">
+                  {msg => <p className="form-errors">{msg}</p>}
+                </ErrorMessage>
               </div>
             </div>
             <ul className="actions">
@@ -141,16 +144,16 @@ export default function Footer() {
           </Form>
         </Formik>
         <ul className="contact">
-          {config.socialLinks.map(social => {
-            const { icon, url } = social;
-            return (
-              <li className={`${icon}`} key={url}>
-                <a href={url} target="_blank" rel="noreferrer">
-                  {url}
-                </a>
-              </li>
-            );
-          })}
+          <li>
+            <a
+              href="https://www.instagram.com/seguros_correa/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://www.instagram.com/seguros_correa/
+            </a>
+          </li>
+          <li>comercial@seguroscorrea.com.co</li>
         </ul>
         <ul className="copyright">
           <li>{data.allMarkdownRemark.nodes[1].frontmatter.title} </li>

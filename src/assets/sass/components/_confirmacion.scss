@@ -1,0 +1,13 @@
+.form-confirmation{
+	height:100vh;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	& .confirmation-icon{
+		width:55px;
+		height:55px;
+	}
+}
+
