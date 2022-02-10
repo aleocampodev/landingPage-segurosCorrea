@@ -1,5 +1,5 @@
 ---
-title: Principios
+title: Principio
 date: " 2022-01-03"
 description: ...
 image: ./img2.webp
