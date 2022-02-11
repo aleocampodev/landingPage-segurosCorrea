@@ -1,6 +1,6 @@
 ---
 date: '2022-01-07'
-image: './allianzLogo.png'
+image: './allianzLogo.webp'
 alt: 'Logo Allianz'
 contentId: 'logoInsurers'
 ---
