@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
-media_folder: assets/folderImages
-public_folder: /img
+media_folder: 'src/assets/folderImages'
+public_folder: '/img'
 
 collections:
   - name: 'landingPage'
