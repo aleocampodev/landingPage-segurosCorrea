@@ -49,7 +49,6 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
-    `gatsby-plugin-image`,
 
     {
       resolve: `gatsby-plugin-purgecss`,
@@ -77,7 +76,6 @@ module.exports = {
         once: true, // Defines if animation needs to be launched once
         disable: true, // Flag for disabling animations
 
-        
         selector: '[data-sal]', // Selector of the elements to be animated
         animateClassName: 'sal-animate', // Class name which triggers animation
         disabledClassName: 'sal-disabled', // Class name which defines the disabled state

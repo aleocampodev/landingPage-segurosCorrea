@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: 'assets/folderImages'
-public_folder: '/img'
+public_folder: '/images'
 
 collections:
   - name: 'landingPage'
@@ -11,7 +11,7 @@ collections:
     folder: 'content/landingPage'
     create: true
     slug: 'index'
-    media_folder: 'static/folderImages'
+    media_folder: ''
     public_folder: ''
     path: '{{title}}/index'
     editor:
