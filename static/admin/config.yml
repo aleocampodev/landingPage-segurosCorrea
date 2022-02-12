@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: 'assets/folderImages'
-public_folder: '/img'
+public_folder: '/folderImages'
 
 collections:
   - name: 'landingPage'
