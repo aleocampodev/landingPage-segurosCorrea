@@ -10,7 +10,7 @@ collections:
     label: 'section'
     folder: 'content/landingPage'
     create: true
-    media_folder: 'assets/folderImages'
+    media_folder: ''
     public_folder: ''
     editor:
       preview: true
