@@ -10,15 +10,17 @@ collections:
     label: 'section'
     folder: 'content/landingPage'
     create: true
-    media_folder: ''
+    slug: 'index'
+    media_folder: 'static/folderImages'
     public_folder: ''
+    path: '{{title}}/index'
     editor:
       preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: false }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Alt', name: 'alt', widget: 'string', required: false }
+      - { label: 'Alt', name: 'alt', widget: 'string' }
       - { label: 'ContentId', name: 'contentId', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
