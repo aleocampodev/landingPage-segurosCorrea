@@ -87,5 +87,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+          plugins: [
+            'gatsby-remark-relative-images',
+              {
+                  resolve: `gatsby-remark-images`,
+              },
+          ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 };
