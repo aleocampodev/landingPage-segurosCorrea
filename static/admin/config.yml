@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: 'assets/folderImages'
-public_folder: '/images'
+media_folder: 'static/folderImages'
+public_folder: '/folderImages'
 
 collections:
   - name: 'landingPage'
@@ -17,10 +17,15 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string', required: false }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Alt', name: 'alt', widget: 'string' }
+      - {
+          label: 'Description',
+          name: 'description',
+          widget: 'string',
+          required: false,
+        }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Alt', name: 'alt', widget: 'string', required: false }
       - { label: 'ContentId', name: 'contentId', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
