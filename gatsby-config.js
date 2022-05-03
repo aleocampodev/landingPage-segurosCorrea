@@ -48,7 +48,6 @@ module.exports = {
         icon: config.manifestIcon, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
     'gatsby-plugin-sass',
 
     {
