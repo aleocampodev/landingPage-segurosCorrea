@@ -49,10 +49,12 @@ export default function Footer() {
       .then(() => {
         actions.resetForm();
         navigate('/Confirmacion');
+        values.trim()
       })
       .catch(error =>
         alert('Lo  sentimos ha ocurrido un error, intentalo mas tarde')
       );
+    values.trim();
   };
   return (
     <section
