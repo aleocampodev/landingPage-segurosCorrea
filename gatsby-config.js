@@ -33,7 +33,6 @@ module.exports = {
     },
 
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-helmet-async',
     'gatsby-transformer-remark',
 
     {
@@ -48,6 +47,7 @@ module.exports = {
         icon: config.manifestIcon, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-offline',
     'gatsby-plugin-sass',
 
     {

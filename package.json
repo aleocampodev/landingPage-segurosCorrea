@@ -4,7 +4,7 @@
   "description": "Gatsby.js V2 starter template based on Solid State by HTML5 UP",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-solidstate.git"
+    "url": "https://github.com/anubhavsrivastava/gatsby-starter-solidstate.git"
   },
   "author": {
     "name": "Anubhav Srivastava",
@@ -13,14 +13,15 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
+    "deepmerge": "^4.2.2",
     "formik": "^2.2.9",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.2.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-netlify-cms": "^6.4.0",
     "gatsby-plugin-offline": "^5.2.0",
     "gatsby-plugin-purgecss": "^6.1.0",
-    "gatsby-plugin-react-helmet": "^5.13.0",
+    "gatsby-plugin-react-helmet": "^5.2.0",
     "gatsby-plugin-react-helmet-async": "^1.2.1",
     "gatsby-plugin-sass": "^5.2.0",
     "gatsby-plugin-scroll-reveal": "0.0.7",
