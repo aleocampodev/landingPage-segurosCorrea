@@ -33,6 +33,7 @@ module.exports = {
     },
 
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     'gatsby-transformer-remark',
 
     {
@@ -90,12 +91,12 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-          plugins: [
-            'gatsby-remark-relative-images',
-              {
-                  resolve: `gatsby-remark-images`,
-              },
-          ],
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: `gatsby-remark-images`,
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,

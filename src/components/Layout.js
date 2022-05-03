@@ -47,8 +47,13 @@ class Layout extends Component {
               title={data.site.siteMetadata.title}
               meta={[
                 { name: 'description', content: 'Empresa de consultoría' },
-                { name: 'keywords', content: 'seguros, seguros de carro, seguros de automovil, seguro educativo, ahorro, inversión, responsabilidad civil, sura, seguros bolivar' },
+                {
+                  name: 'keywords',
+                  content:
+                    'seguros, seguros de carro, seguros de automovil, seguro educativo, ahorro, inversión, responsabilidad civil, sura, seguros bolivar',
+                },
               ]}
+              defer={false}
             >
               <html lang="es" />
             </Helmet>
